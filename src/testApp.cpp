@@ -207,7 +207,7 @@ void testApp::setup(){
 	R1sanda=false;
 
 	//VARIABLES ICHIDAI
-	ichidaiPswrd="123";
+	ichidaiPswrd="Nx447238gas";
 	ichidaiPass=false;
 	ichidaiOK=false;
 	if(ofGetScreenWidth()>1200){
@@ -269,7 +269,7 @@ void testApp::setup(){
 	}
 
 	//VARIABLES Nidai
-	nidaiPswrd="456";
+	nidaiPswrd="Nx715810mpo";
 	nidaiPass=false;
 	nidaiOK=false;
 
@@ -282,7 +282,7 @@ void testApp::setup(){
 
 
 	//VARIABLES Sandai
-	sandaiPswrd="789";
+	sandaiPswrd="Nx35t115fah";
 	sandaiPass=false;
 	sandaiOK=false;
 

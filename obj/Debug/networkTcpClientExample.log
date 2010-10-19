@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 19/10/2010 17:14:54.
+﻿Compilación iniciada a las 19/10/2010 17:56:16.
      1>Proyecto "C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\networkTcpClientExample.vcxproj" en el nodo 3 (build destinos).
      1>InitializeBuildStatus:
          Se creará "obj\Debug\mierva.unsuccessfulbuild" porque se especificó "AlwaysCreate".
@@ -65,4 +65,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:11.27
+Tiempo transcurrido 00:00:13.31
