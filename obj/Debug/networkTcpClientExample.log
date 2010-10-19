@@ -1,14 +1,14 @@
-﻿Compilación iniciada a las 15/10/2010 12:02:23.
-     1>Proyecto "E:\OF\apps\Meus\Minerva\networkTcpClientExample.vcxproj" en el nodo 3 (build destinos).
+﻿Compilación iniciada a las 19/10/2010 17:14:54.
+     1>Proyecto "C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\networkTcpClientExample.vcxproj" en el nodo 3 (build destinos).
      1>InitializeBuildStatus:
          Se creará "obj\Debug\mierva.unsuccessfulbuild" porque se especificó "AlwaysCreate".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\libs\openFrameworks /I..\..\..\libs\openFrameworks\graphics /I..\..\..\libs\openFrameworks\app /I..\..\..\libs\openFrameworks\sound /I..\..\..\libs\openFrameworks\utils /I..\..\..\libs\openFrameworks\communication /I..\..\..\libs\openFrameworks\video /I..\..\..\libs\openFrameworks\events /I..\..\..\libs\glut\include /I..\..\..\libs\rtAudio\include /I..\..\..\libs\quicktime\include /I..\..\..\libs\freetype\include /I..\..\..\libs\freetype\include\freetype2 /I..\..\..\libs\freeImage\include /I..\..\..\libs\fmodex\include /I..\..\..\libs\videoInput\include /I..\..\..\libs\glee\include /I..\..\..\libs\glu\include /I..\..\..\libs\poco\include /I..\..\..\addons /I..\..\..\addons\ofxNetwork\src /I..\..\..\addons\ofxDirList\src /I..\..\..\addons\ofxObjLoader\src /I..\..\..\addons\ofxOpenCv\src /I..\..\..\addons\ofxOpenCv\libs\opencv\include /I..\..\..\addons\ofxOsc\src /I..\..\..\addons\ofxOsc\libs\oscpack\include\ip /I..\..\..\addons\ofxOsc\libs\oscpack\include\osc /I..\..\..\addons\ofxThread\src /I..\..\..\addons\ofxVectorGraphics\src /I..\..\..\addons\ofxVectorGraphics\libs /I..\..\..\addons\ofxVectorMath\src /I..\..\..\addons\ofxXMLSettings\libs /I..\..\..\addons\ofxXMLSettings\src /I..\..\..\addons\ofx3DModelLoader\src /I..\..\..\addons\ofx3DModelLoader\src\3DS /I..\..\..\addons\ofxGui\src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D POCO_STATIC /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Debug\\" /Fd"obj\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\testApp.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\libs\openFrameworks /I..\..\..\libs\openFrameworks\graphics /I..\..\..\libs\openFrameworks\app /I..\..\..\libs\openFrameworks\sound /I..\..\..\libs\openFrameworks\utils /I..\..\..\libs\openFrameworks\communication /I..\..\..\libs\openFrameworks\video /I..\..\..\libs\openFrameworks\events /I..\..\..\libs\glut\include /I..\..\..\libs\rtAudio\include /I..\..\..\libs\quicktime\include /I..\..\..\libs\freetype\include /I..\..\..\libs\freetype\include\freetype2 /I..\..\..\libs\freeImage\include /I..\..\..\libs\fmodex\include /I..\..\..\libs\videoInput\include /I..\..\..\libs\glee\include /I..\..\..\libs\glu\include /I..\..\..\libs\poco\include /I..\..\..\addons /I..\..\..\addons\ofxNetwork\src /I..\..\..\addons\ofxDirList\src /I..\..\..\addons\ofxObjLoader\src /I..\..\..\addons\ofxOpenCv\src /I..\..\..\addons\ofxOpenCv\libs\opencv\include /I..\..\..\addons\ofxOsc\src /I..\..\..\addons\ofxOsc\libs\oscpack\include\ip /I..\..\..\addons\ofxOsc\libs\oscpack\include\osc /I..\..\..\addons\ofxThread\src /I..\..\..\addons\ofxVectorGraphics\src /I..\..\..\addons\ofxVectorGraphics\libs /I..\..\..\addons\ofxVectorMath\src /I..\..\..\addons\ofxXMLSettings\libs /I..\..\..\addons\ofxXMLSettings\src /I..\..\..\addons\ofx3DModelLoader\src /I..\..\..\addons\ofx3DModelLoader\src\3DS /I..\..\..\addons\ofxGui\src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D POCO_STATIC /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Debug\\" /Fd"obj\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\testApp.cpp
          testApp.cpp
        ManifestResourceCompile:
          Todas las salidas están actualizadas.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\mierva_debug.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\libs\glut\lib\vs2008 /LIBPATH:..\..\..\libs\rtAudio\lib\vs2008 /LIBPATH:..\..\..\libs\FreeImage\lib\vs2008 /LIBPATH:..\..\..\libs\freetype\lib\vs2008 /LIBPATH:..\..\..\libs\quicktime\lib\vs2008 /LIBPATH:..\..\..\libs\fmodex\lib\vs2008 /LIBPATH:..\..\..\libs\videoInput\lib\vs2008 /LIBPATH:..\..\..\libs\glee\lib\vs2008 /LIBPATH:..\..\..\libs\glu\lib\vs2008 /LIBPATH:..\..\..\libs\Poco\lib\vs2008 /LIBPATH:..\..\..\libs\openFrameworksCompiled\lib\vs2008 openframeworksLibDebug.lib OpenGL32.lib GLu32.lib kernel32.lib setupapi.lib glut32.lib rtAudioD.lib videoInput.lib libfreetype.lib FreeImage.lib qtmlClient.lib dsound.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib GLee.lib fmodex_vc.lib glu32.lib PocoFoundationmtd.lib PocoNetmtd.lib PocoUtilmtd.lib PocoXMLmtd.lib Ws2_32.lib ..\..\..\addons\ofxOpenCv\libs\opencv\lib\vs2008\cv110d.lib ..\..\..\addons\ofxOpenCv\libs\opencv\lib\vs2008\cvaux110d.lib ..\..\..\addons\ofxOpenCv\libs\opencv\lib\vs2008\cxcore110d.lib ..\..\..\addons\ofxOsc\libs\oscpack\lib\vs2008\oscpackd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:atlthunk.lib /NODEFAULTLIB:LIBC.lib /NODEFAULTLIB:LIBCMT /MANIFEST /ManifestFile:"obj\Debug\mierva_debug.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\OF\apps\Meus\Minerva\bin\mierva_debug_debugInfo.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"bin\mierva_debug.lib" /MACHINE:X86 obj\Debug\mierva_debug.exe.embed.manifest.res
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\mierva_debug.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\libs\glut\lib\vs2008 /LIBPATH:..\..\..\libs\rtAudio\lib\vs2008 /LIBPATH:..\..\..\libs\FreeImage\lib\vs2008 /LIBPATH:..\..\..\libs\freetype\lib\vs2008 /LIBPATH:..\..\..\libs\quicktime\lib\vs2008 /LIBPATH:..\..\..\libs\fmodex\lib\vs2008 /LIBPATH:..\..\..\libs\videoInput\lib\vs2008 /LIBPATH:..\..\..\libs\glee\lib\vs2008 /LIBPATH:..\..\..\libs\glu\lib\vs2008 /LIBPATH:..\..\..\libs\Poco\lib\vs2008 /LIBPATH:..\..\..\libs\openFrameworksCompiled\lib\vs2008 openframeworksLibDebug.lib OpenGL32.lib GLu32.lib kernel32.lib setupapi.lib glut32.lib rtAudioD.lib videoInput.lib libfreetype.lib FreeImage.lib qtmlClient.lib dsound.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib GLee.lib fmodex_vc.lib glu32.lib PocoFoundationmtd.lib PocoNetmtd.lib PocoUtilmtd.lib PocoXMLmtd.lib Ws2_32.lib ..\..\..\addons\ofxOpenCv\libs\opencv\lib\vs2008\cv110d.lib ..\..\..\addons\ofxOpenCv\libs\opencv\lib\vs2008\cvaux110d.lib ..\..\..\addons\ofxOpenCv\libs\opencv\lib\vs2008\cxcore110d.lib ..\..\..\addons\ofxOsc\libs\oscpack\lib\vs2008\oscpackd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:atlthunk.lib /NODEFAULTLIB:LIBC.lib /NODEFAULTLIB:LIBCMT /MANIFEST /ManifestFile:"obj\Debug\mierva_debug.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\bin\mierva_debug_debugInfo.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"bin\mierva_debug.lib" /MACHINE:X86 obj\Debug\mierva_debug.exe.embed.manifest.res
          obj\Debug\ofxDirList.obj
          obj\Debug\ofxGui.obj
          obj\Debug\ofxGuiButton.obj
@@ -37,32 +37,32 @@
          obj\Debug\ofxTCPServer.obj
          obj\Debug\ofxUDPManager.obj
          obj\Debug\ofxThread.obj
-         E:\OF\libs\openFrameworksCompiled\lib\vs2008\openframeworksLibDebug.lib
+         C:\Users\mothm4n\Documents\github\OF\libs\openFrameworksCompiled\lib\vs2008\openframeworksLibDebug.lib
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"obj\Debug\mierva_debug.exe.embed.manifest" /manifest obj\Debug\mierva_debug.exe.intermediate.manifest
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"obj\Debug\mierva_debug.exe.embed.manifest" /manifest obj\Debug\mierva_debug.exe.intermediate.manifest
          Todas las salidas están actualizadas.
        LinkEmbedManifest:
          Todas las salidas están actualizadas.
-         networkTcpClientExample.vcxproj -> E:\OF\apps\Meus\Minerva\bin\mierva_debug.exe
+         networkTcpClientExample.vcxproj -> C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\bin\mierva_debug.exe
        PostBuildEvent:
          Description: adding DLLs and creating data folder
-         xcopy /e /i /y "E:\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\*.dll" "E:\OF\apps\Meus\Minerva\\bin"
-         if not exist "E:\OF\apps\Meus\Minerva\\bin\data" mkdir  "E:\OF\apps\Meus\Minerva\\bin\data"
+         xcopy /e /i /y "C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\*.dll" "C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\bin"
+         if not exist "C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\bin\data" mkdir  "C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\bin\data"
          
          
          :VCEnd
-         E:\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\fmodex.dll
-         E:\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\fmodexL.dll
-         E:\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\FreeImage.dll
-         E:\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\FreeType-6.dll
-         E:\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\glut32.dll
-         E:\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\Zlib.dll
+         C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\fmodex.dll
+         C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\fmodexL.dll
+         C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\FreeImage.dll
+         C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\FreeType-6.dll
+         C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\glut32.dll
+         C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\\..\..\..\export\vs2008\Zlib.dll
          6 archivo(s) copiado(s)
        FinalizeBuildStatus:
          Se eliminará el archivo "obj\Debug\mierva.unsuccessfulbuild".
          Aplicando tarea Touch a "obj\Debug\mierva.lastbuildstate".
-     1>Compilación del proyecto terminada "E:\OF\apps\Meus\Minerva\networkTcpClientExample.vcxproj" (build destinos).
+     1>Compilación del proyecto terminada "C:\Users\mothm4n\Documents\github\OF\apps\Meus\Minerva\networkTcpClientExample.vcxproj" (build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:14.10
+Tiempo transcurrido 00:00:11.27

@@ -7,6 +7,8 @@
 	float pantX = 0;
 	float pantY = 0;
 	float pantZ = 0;
+	bool framerate=false;
+	bool Vsync=false;
 //Lista de Mundos
 string Wrlds[] = {"985656",
 				"532924",
@@ -64,6 +66,7 @@ string lista,Pswrd,ichidaiPswrd,nidaiPswrd,sandaiPswrd,WorldPass,beaconPass;
 bool negro,full,panel,ichidaiPass,nidaiPass,sandaiPass,ichidaiOK,nidaiOK,sandaiOK,show,OK,homeOK,portalOK,trobat,teleportOK;
 bool portalOKAnt = false;
 bool teleportOKAnt=false;
+bool visible=false;
 int linePos,linePosX,showPos,Ti,T,Ta,WorldExt,WorldMAX,seed1,seed2,MinusKonami,KonamiTempus,beaconExt;
 size_t cPos,tPos;
 
@@ -120,7 +123,7 @@ bool DevMode=false;
 void testApp::setup(){
 	OK=false;
 	// we don't want to be running to fast
-	ofSetVerticalSync(true);
+	//ofSetVerticalSync(true);
 	
 	//ofSetFrameRate(60);
 
@@ -374,6 +377,12 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
+	
+	ofSetVerticalSync(Vsync);
+	if(framerate){
+		ofSetFrameRate(60);
+	}
+
 	if(enter){
 		enter=false;
 
@@ -748,10 +757,10 @@ void testApp::draw(){
 		ofSetBackgroundAuto(false);
 		ofSetColor(255, 255, 255);
 
-
-		//mono.drawString("Welcome to Minerva System by Mechanical Hope, the framereate is :  "+ofToString(ofGetFrameRate()), 15, 30);
-	
-	if(oldVer){
+		if(DevMode){
+			mono.drawString("FrameRate to 60 is: "+ofToString(framerate)+"   Vsync is: "+ofToString(Vsync)+ " The framereate is :  "+ofToString(ofGetFrameRate()), 600, 30);
+		}
+		if(oldVer){
 		if(!Richi){
 			mono.drawString("ver. 0.69b",ichiX+295,ichiY);
 		}
@@ -1292,7 +1301,7 @@ void testApp::keyPressed(int key){
 		}
 	}
 
-	
+	//MASTER CONTROL OF Conex
 	if(key == OF_KEY_F7  ){
 	
 	if (conex>0 ){
@@ -1316,6 +1325,20 @@ void testApp::keyPressed(int key){
 
 		DevMode = !DevMode;
 	
+	}
+	if(DevMode){
+		if(key == OF_KEY_DEL  ){
+
+			framerate = !framerate;
+	
+		}
+	
+	}else{
+		if(key == OF_KEY_DEL  ){
+
+			visible = !visible;
+	
+		}
 	}
 
 	if(!DevMode){
@@ -1362,10 +1385,16 @@ void testApp::keyPressed(int key){
 				pantX++;
 			}
 	}
-
-	if(key == OF_KEY_END){
-		rooms[roomPos] = !rooms[roomPos]; 
-	}	
+	if(DevMode){
+		if(key == OF_KEY_END){
+			Vsync = !Vsync; 
+		}	
+	
+	}else{
+		if(key == OF_KEY_END){
+			rooms[roomPos] = !rooms[roomPos]; 
+		}	
+	}
 
 	if(indice==7 && show==true && gameON){
 			if(key == OF_KEY_RETURN){
@@ -1447,6 +1476,8 @@ void testApp::keyReleased(int key){
 			
 			setup();
 		}
+		
+	
 		if(key == OF_KEY_INSERT  ){	
 			
 			oldVer=!oldVer;
@@ -1468,6 +1499,7 @@ void testApp::keyReleased(int key){
 				}
 			}
 		}
+	
 
 		if(portalOK){
 			if((key == OF_KEY_UP)||(key == OF_KEY_DOWN)||(key == OF_KEY_LEFT)||(key == OF_KEY_RIGHT)||(key == 'a')||(key == 'b')){
@@ -2166,7 +2198,9 @@ bool testApp::drawF(){
 					}
 				}
 			glEnd();
-		mono.drawString("Sincronitzation: "+ofToString(sinc)+"%",sandaX,sandaY+275);
+		if(visible){
+			mono.drawString("Sincronitzation: "+ofToString(sinc)+"%",sandaX,sandaY+275);
+		}
 		}
 		if(T>30 && T<countdownF){
 			if(gameOK){
@@ -2619,7 +2653,8 @@ bool testApp::StartInitial(){
 			conex=90;
 			magneto=1;
 
-
+			
+	alert.play();
 	return finish;
 
 }
