@@ -106,6 +106,8 @@ Los textos de la interfaz principal no reciben desenfoque ni efectos de postproc
 
 ## Comprobación
 
+La prueba mantenida de apertura está en `tests/browser/visual.e2e.ts`: usa el reloj del navegador para comprobar 0, 4 y 8 segundos, geometría fija de la imagen, transparencia central creciente del shader y pausa. `npm run capture:ui` adjunta las tres capturas y añade una grabación de toda la apertura con el reloj normal, desde la aplicación real. El grabador aislado `output/playwright/record-portal.html` y los vídeos enlazados a continuación son evidencias históricas; no se usan para comprobar ni grabar nuevas versiones.
+
 En Firefox 159.0 de escritorio se compararon capturas con y sin filtro y con los canales alineados. La prueba confirmó la distorsión y la separación RGB. Se completó una misión alternando Emergencia durante la preparación y la transferencia. Se comprobaron el rechazo de una orden fuera de secuencia, el avance del reloj y el consumo de recursos. El modo conservó la pausa, el historial y la orden en curso, y la victoria permaneció al recargar. [Resultados de Firefox](output/playwright/crt-firefox-check.json) · [Captura](output/playwright/firefox-crt-desktop.png).
 
 Corrección del CRT en WebKit. `output/playwright/verify-emergency.js` comprueba los píxeles de la cabecera con el filtro activo y desactivado, verifica el contraste del botón de sonido y completa una misión alternando los modos sin usar el portapapeles. Pasó en WebKit 18.4 y 27.2 y en Chromium. En los tres, la barra de energía al 55 % ocupó 154 de los 283 píxeles comprobados. [Resultados](output/playwright/crt-webkit-check.json) · [Captura de WebKit 18.4](output/playwright/crt-webkit-18.4.png).

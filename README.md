@@ -127,7 +127,7 @@ npm run ci:local
 | --- | --- |
 | `npm run check` | Oxlint, TypeScript y pruebas Vitest, incluidos los hashes de los 16 audios originales. |
 | `npm run test:e2e` | Compilación nueva y pruebas de navegador con Playwright. |
-| `npm run test:visual` | Contrato visual vigente: composición A, consola compacta, 100 % de sincronía y transferencia sin recortes en seis tamaños y tres idiomas. |
+| `npm run test:visual` | Contrato visual vigente: composición A, consola compacta, 100 % de sincronía y transferencia sin recortes en seis tamaños y tres idiomas; apertura del portal a 0, 4 y 8 segundos, sin zoom y con pausa. |
 | `npm run capture:ui` | El mismo recorrido con capturas y vídeos WebM en `output/ui-capture/`, visibles en el informe HTML. |
 | `npm run ci:local` | Todos los controles anteriores, en este equipo. |
 | `npm run test:e2e -- --headed` | Las mismas pruebas con el navegador visible. |
@@ -141,7 +141,7 @@ Los tests permanentes están en `tests/browser/`. Los fallos dejan capturas y tr
 
 La aceptación visual sigue [DESIGN.md - Validación de la interfaz](DESIGN.md#validación-de-la-interfaz). La comparación histórica de Impeccable conserva su resultado original; las adaptaciones solicitadas (consola pequeña, datos reales y animaciones) se evalúan mediante el contrato actual. La valoración del acabado corresponde a la revisión de las capturas.
 
-`capture:ui` compila y abre su propio servidor y navegador con la misma configuración de las pruebas. Se detiene al primer fallo; un vídeo de una prueba fallida sirve para diagnosticar y no acredita una entrega correcta. Playwright finaliza los WebM al cerrar cada contexto; no se necesita conversión ni una ruta de caché de `npx`. El informe reúne las capturas de composición y transferencia y los vídeos. Cada ejecución sustituye su directorio de resultados: guarda fuera de él cualquier evidencia que quieras conservar.
+`capture:ui` compila y abre su propio servidor y navegador con la misma configuración de las pruebas. Se detiene al primer fallo; un vídeo de una prueba fallida sirve para diagnosticar y no acredita una entrega correcta. Playwright finaliza los WebM al cerrar cada contexto; no se necesita conversión ni una ruta de caché de `npx`. El informe reúne las capturas de composición, transferencia y máscara a 0, 4 y 8 segundos. La prueba «grabación real de la apertura completa del portal» usa el reloj normal y graba la aplicación durante toda la apertura de 8 segundos; es el vídeo de entrega. La prueba con reloj controlado es una comprobación reproducible, no una demostración a velocidad real. Cada ejecución sustituye su directorio de resultados: guarda fuera de él cualquier evidencia que quieras conservar.
 
 ### Chats simultáneos
 

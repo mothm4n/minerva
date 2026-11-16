@@ -110,3 +110,99 @@ for (const language of ['es', 'en', 'ja']) {
     }
   });
 }
+
+// Read alpha immediately after drawing: WebGL may clear its buffer after compositing.
+test.describe('apertura del portal con reloj controlado', () => {
+  test('la máscara abre desde el centro en 8 segundos, sin zoom y con pausa', async ({ page }, testInfo) => {
+    await page.clock.install({ time: new Date('2026-01-01T00:00:00Z') });
+    await page.addInitScript(() => {
+      const draw = WebGLRenderingContext.prototype.drawArrays;
+      WebGLRenderingContext.prototype.drawArrays = function (...args) {
+        draw.apply(this, args);
+        const canvas = this.canvas as HTMLCanvasElement;
+        if (canvas.id !== 'portal-effects') return;
+        canvas.dataset.testDraws = String(Number(canvas.dataset.testDraws ?? 0) + 1);
+        if (canvas.dataset.testSample !== 'pending') return;
+        const pixels = new Uint8Array(canvas.width * canvas.height * 4);
+        this.readPixels(0, 0, canvas.width, canvas.height, this.RGBA, this.UNSIGNED_BYTE, pixels);
+        let inside = 0, transparent = 0, center = 0, centerAlpha = 0;
+        const scale = Math.min(canvas.width, canvas.height) / 2;
+        for (let y = 0; y < canvas.height; y++) for (let x = 0; x < canvas.width; x++) {
+          const radius = Math.hypot(x + 0.5 - canvas.width / 2, y + 0.5 - canvas.height / 2) / scale;
+          const alpha = pixels[(y * canvas.width + x) * 4 + 3] / 255;
+          if (radius < 0.75) { inside++; if (alpha < 0.5) transparent++; }
+          if (radius < 0.04) { center++; centerAlpha += alpha; }
+        }
+        canvas.dataset.testSample = JSON.stringify({ openArea: transparent / inside, centerAlpha: centerAlpha / center, error: this.getError() });
+      };
+    });
+    await begin(page);
+    await preparePortal(page);
+    await page.evaluate(() => document.fonts.ready);
+    await page.locator('#portal-world').evaluate(image => (image as HTMLImageElement).decode());
+    const imageBounds = await page.locator('#portal-world').boundingBox();
+    await page.clock.pauseAt(new Date('2026-01-01T00:01:00Z'));
+    const portal = page.locator('#portal-effects');
+    const instrument = page.locator('.portal-instrument');
+    const reveal = () => instrument.evaluate(element => Number((element as HTMLElement).style.getPropertyValue('--portal-reveal')));
+    async function sample(name: string) {
+      await portal.evaluate(element => { (element as HTMLElement).dataset.testSample = 'pending'; });
+      await page.clock.runFor(32);
+      await expect(portal).toHaveAttribute('data-ready', 'true');
+      await expect(portal).not.toHaveAttribute('data-test-sample', 'pending');
+      await expect(page.locator('#portal-world')).toHaveCSS('transform', 'none');
+      expect(await page.locator('#portal-world').boundingBox()).toEqual(imageBounds);
+      const pixels = JSON.parse((await portal.getAttribute('data-test-sample'))!) as { openArea: number; centerAlpha: number; error: number };
+      expect(pixels.error).toBe(0);
+      if (capture) await testInfo.attach(name, {
+        body: await page.screenshot({ path: testInfo.outputPath(`${name}.png`) }), contentType: 'image/png',
+      });
+      return pixels;
+    }
+    await command(page, 'nidai start portal');
+    const start = await sample('portal-0s');
+    expect(await reveal()).toBeLessThan(0.001);
+    expect(start.openArea).toBeLessThan(0.01);
+    await page.clock.runFor(3936);
+    const middle = await sample('portal-4s');
+    expect(await reveal()).toBeCloseTo(0.5, 2);
+    expect(middle.centerAlpha).toBeLessThan(0.25);
+    expect(middle.openArea).toBeGreaterThan(start.openArea + 0.02);
+    await page.locator('#pause').click();
+    await page.clock.runFor(32);
+    const pausedReveal = await reveal();
+    const pausedGame = await savedGame(page);
+    const pausedDraws = await portal.getAttribute('data-test-draws');
+    await page.clock.runFor(1000);
+    expect(await reveal()).toBe(pausedReveal);
+    expect(await savedGame(page)).toEqual(pausedGame);
+    expect(await portal.getAttribute('data-test-draws')).toBe(pausedDraws);
+    await page.locator('#pause').click();
+    await page.clock.runFor(3984);
+    expect(await reveal()).toBeLessThan(1);
+    const end = await sample('portal-8s');
+    expect(await reveal()).toBe(1);
+    expect(end.centerAlpha).toBeLessThan(0.25);
+    expect(end.openArea).toBeGreaterThan(middle.openArea + 0.15);
+    expect((await savedGame(page)).stage).toBe('open');
+  });
+});
+
+if (capture) {
+  test('grabación real de la apertura completa del portal', async ({ page }, testInfo) => {
+    await page.setViewportSize({ width: 1672, height: 941 });
+    await begin(page);
+    await preparePortal(page);
+    await expect(page.locator('#portal-effects')).toHaveAttribute('data-ready', 'true');
+    await command(page, 'nidai start portal');
+    // Real time keeps the recorded eight-second animation at its original speed.
+    await expect.poll(() => page.locator('.portal-instrument').evaluate(element =>
+      Number((element as HTMLElement).style.getPropertyValue('--portal-reveal'))), { timeout: 12_000 }).toBe(1);
+    await page.locator('#pause').click();
+    expect((await savedGame(page)).stage).toBe('open');
+    await expect(page.locator('#portal-world')).toHaveCSS('transform', 'none');
+    await testInfo.attach('portal-completo', {
+      body: await page.screenshot({ path: testInfo.outputPath('portal-completo.png') }), contentType: 'image/png',
+    });
+  });
+}
