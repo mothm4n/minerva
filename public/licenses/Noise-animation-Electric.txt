@@ -1,0 +1,15 @@
+Noise animation - Electric
+Original author: nimitz (stormoid.com), @stormoid
+Original: https://www.shadertoy.com/view/ldlXRS
+License: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
+https://creativecommons.org/licenses/by-nc-sa/3.0/
+Legal text: https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+Contact the original author for other licensing options.
+
+The original source was supplied by the user on 2026-11-15.
+Minerva adaptation in src/shaders/reactor.glsl, distributed under the same license:
+- Replaces the noise texture with procedural value noise.
+- Preserves ridged five-octave fBm, dual domain displacement and logarithmic rings.
+- Bounds the centre and emission to avoid undefined values and uncontrolled brightness.
+- Restricts the field to a toroidal ignition sequence with amber-to-mint stabilization.
+- Adds hexagonal containment and segmented measurement rings.

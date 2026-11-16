@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+.playwright-cli/
+output/
+.taste-skill/
+.impeccable/build/
+.impeccable/review/
+.impeccable/live/
+.impeccable/hook.cache.json
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,117 @@
+{
+  "commit": "2788f1a5d7f4ae83bc206cda9b5095247f1b04f8",
+  "files": [
+    {
+      "name": "CD.wav",
+      "path": "bin/data/sounds/CD.wav",
+      "sha": "ddf7414b79c738c09bcc36b1d5e34364979f2454",
+      "size": 176444,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/CD.wav"
+    },
+    {
+      "name": "Pica.wav",
+      "path": "bin/data/sounds/Pica.wav",
+      "sha": "acf501136216d9a70642391225822894efd8e7d2",
+      "size": 45372,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/Pica.wav"
+    },
+    {
+      "name": "alert.wav",
+      "path": "bin/data/sounds/alert.wav",
+      "sha": "ad849503330bb813230446ed2ae7aee133828b21",
+      "size": 670484,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/alert.wav"
+    },
+    {
+      "name": "ambientPC.wav",
+      "path": "bin/data/sounds/ambientPC.wav",
+      "sha": "534463e28093acc5146e084ed1e0d11412549c21",
+      "size": 882044,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/ambientPC.wav"
+    },
+    {
+      "name": "coolON.mp3",
+      "path": "bin/data/sounds/coolON.mp3",
+      "sha": "cf57fd3d67a5d71bc761b1d1d78c78eab7a4b6a1",
+      "size": 21314,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/coolON.mp3"
+    },
+    {
+      "name": "electroON.wav",
+      "path": "bin/data/sounds/electroON.wav",
+      "sha": "e5c866a5aa4d1dc0ffb33acea10054f692a77587",
+      "size": 882044,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/electroON.wav"
+    },
+    {
+      "name": "portalAmbient.ogg",
+      "path": "bin/data/sounds/portalAmbient.ogg",
+      "sha": "0e35666028fa1740584cfe1f8571db60dd5ec89a",
+      "size": 1271941,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/portalAmbient.ogg"
+    },
+    {
+      "name": "portalEnd.wav",
+      "path": "bin/data/sounds/portalEnd.wav",
+      "sha": "0157f1b241f894f991f05125c0321d76e6ae502f",
+      "size": 251708,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/portalEnd.wav"
+    },
+    {
+      "name": "portalLoop.wav",
+      "path": "bin/data/sounds/portalLoop.wav",
+      "sha": "4cca915446a53ecd3721713aeafe307c73a88616",
+      "size": 882044,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/portalLoop.wav"
+    },
+    {
+      "name": "portalStart.mp3",
+      "path": "bin/data/sounds/portalStart.mp3",
+      "sha": "4ecfee07c61c2ac4d036309c72f4f25521b396a6",
+      "size": 269164,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/portalStart.mp3"
+    },
+    {
+      "name": "powerDown.mp3",
+      "path": "bin/data/sounds/powerDown.mp3",
+      "sha": "71d4762abb29f743cc8334e104d18c05aaffe50e",
+      "size": 62692,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/powerDown.mp3"
+    },
+    {
+      "name": "toroidLoop.wav",
+      "path": "bin/data/sounds/toroidLoop.wav",
+      "sha": "fe5d52e3fe6256216dfce57b04e7ba1068b46428",
+      "size": 529086,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/toroidLoop.wav"
+    },
+    {
+      "name": "toroidStart.mp3",
+      "path": "bin/data/sounds/toroidStart.mp3",
+      "sha": "8a498ea4d5eda981f9dad1ad28c58f72a149c995",
+      "size": 33435,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/toroidStart.mp3"
+    },
+    {
+      "name": "toroidend.wav",
+      "path": "bin/data/sounds/toroidend.wav",
+      "sha": "3a9ba06ee03c6c19c4ca3e22c8a950bf251de1e5",
+      "size": 185072,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/toroidend.wav"
+    },
+    {
+      "name": "turnONmonitors.mp3",
+      "path": "bin/data/sounds/turnONmonitors.mp3",
+      "sha": "6c0d38651c8fbf84db669046535a1fe3576a7725",
+      "size": 50210,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/turnONmonitors.mp3"
+    },
+    {
+      "name": "turnONpc.wav",
+      "path": "bin/data/sounds/turnONpc.wav",
+      "sha": "3e16e4b924e8dc0d5e191f57f19cd8002eb65e64",
+      "size": 95791,
+      "url": "https://raw.githubusercontent.com/mothm4n/minerva/2788f1a5d7f4ae83bc206cda9b5095247f1b04f8/bin/data/sounds/turnONpc.wav"
+    }
+  ]
+}

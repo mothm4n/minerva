@@ -1,0 +1,18 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-15T09:59:29.396Z",
+        "reason": "Codex: falso positivo verificado en Chrome y en src/style.css. El título usa 32 px frente a 13 px de texto (2,46x), y los títulos de subsistema 17 px frente a 12 px (1,42x). En móvil el título usa 27 px frente a 12 px. El CSS se carga desde src/main.ts; se conserva la jerarquía existente."
+      }
+    ]
+  }
+}

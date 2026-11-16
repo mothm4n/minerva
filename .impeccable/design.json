@@ -1,0 +1,763 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-15T20:02:01.974296Z",
+  "title": "Design System: Minerva",
+  "extensions": {
+    "colorMeta": {
+      "amber": {
+        "role": "primary",
+        "displayName": "Ámbar de operación",
+        "tonalRamp": [
+          "oklch(15.00% 0.1685 82.89)",
+          "oklch(26.43% 0.1685 82.89)",
+          "oklch(37.86% 0.1685 82.89)",
+          "oklch(49.29% 0.1685 82.89)",
+          "oklch(60.71% 0.1685 82.89)",
+          "oklch(72.14% 0.1685 82.89)",
+          "oklch(83.57% 0.1685 82.89)",
+          "oklch(95.00% 0.1685 82.89)"
+        ]
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Menta de lectura",
+        "tonalRamp": [
+          "oklch(15.00% 0.1831 160.55)",
+          "oklch(26.43% 0.1831 160.55)",
+          "oklch(37.86% 0.1831 160.55)",
+          "oklch(49.29% 0.1831 160.55)",
+          "oklch(60.71% 0.1831 160.55)",
+          "oklch(72.14% 0.1831 160.55)",
+          "oklch(83.57% 0.1831 160.55)",
+          "oklch(95.00% 0.1831 160.55)"
+        ]
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Rojo de bloqueo",
+        "tonalRamp": [
+          "oklch(15.00% 0.2298 24.01)",
+          "oklch(26.43% 0.2298 24.01)",
+          "oklch(37.86% 0.2298 24.01)",
+          "oklch(49.29% 0.2298 24.01)",
+          "oklch(60.71% 0.2298 24.01)",
+          "oklch(72.14% 0.2298 24.01)",
+          "oklch(83.57% 0.2298 24.01)",
+          "oklch(95.00% 0.2298 24.01)"
+        ]
+      },
+      "cyan": {
+        "role": "tertiary",
+        "displayName": "Cian de referencia",
+        "tonalRamp": [
+          "oklch(15.00% 0.1361 215.54)",
+          "oklch(26.43% 0.1361 215.54)",
+          "oklch(37.86% 0.1361 215.54)",
+          "oklch(49.29% 0.1361 215.54)",
+          "oklch(60.71% 0.1361 215.54)",
+          "oklch(72.14% 0.1361 215.54)",
+          "oklch(83.57% 0.1361 215.54)",
+          "oklch(95.00% 0.1361 215.54)"
+        ]
+      },
+      "magenta": {
+        "role": "tertiary",
+        "displayName": "Magenta de ajuste",
+        "tonalRamp": [
+          "oklch(15.00% 0.2440 323.13)",
+          "oklch(26.43% 0.2440 323.13)",
+          "oklch(37.86% 0.2440 323.13)",
+          "oklch(49.29% 0.2440 323.13)",
+          "oklch(60.71% 0.2440 323.13)",
+          "oklch(72.14% 0.2440 323.13)",
+          "oklch(83.57% 0.2440 323.13)",
+          "oklch(95.00% 0.2440 323.13)"
+        ]
+      },
+      "line": {
+        "role": "primary",
+        "displayName": "Ámbar de estructura",
+        "tonalRamp": [
+          "oklch(15.00% 0.1619 80.21)",
+          "oklch(26.43% 0.1619 80.21)",
+          "oklch(37.86% 0.1619 80.21)",
+          "oklch(49.29% 0.1619 80.21)",
+          "oklch(60.71% 0.1619 80.21)",
+          "oklch(72.14% 0.1619 80.21)",
+          "oklch(83.57% 0.1619 80.21)",
+          "oklch(95.00% 0.1619 80.21)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Ámbar atenuado",
+        "tonalRamp": [
+          "oklch(15.00% 0.0754 86.24)",
+          "oklch(26.43% 0.0754 86.24)",
+          "oklch(37.86% 0.0754 86.24)",
+          "oklch(49.29% 0.0754 86.24)",
+          "oklch(60.71% 0.0754 86.24)",
+          "oklch(72.14% 0.0754 86.24)",
+          "oklch(83.57% 0.0754 86.24)",
+          "oklch(95.00% 0.0754 86.24)"
+        ]
+      },
+      "black": {
+        "role": "neutral",
+        "displayName": "Negro de instrumento",
+        "tonalRamp": [
+          "oklch(15.00% 0.0021 17.43)",
+          "oklch(26.43% 0.0021 17.43)",
+          "oklch(37.86% 0.0021 17.43)",
+          "oklch(49.29% 0.0021 17.43)",
+          "oklch(60.71% 0.0021 17.43)",
+          "oklch(72.14% 0.0021 17.43)",
+          "oklch(83.57% 0.0021 17.43)",
+          "oklch(95.00% 0.0021 17.43)"
+        ]
+      },
+      "terminal-output": {
+        "role": "secondary",
+        "displayName": "Menta de respuesta",
+        "tonalRamp": [
+          "oklch(15.00% 0.1187 165.49)",
+          "oklch(26.43% 0.1187 165.49)",
+          "oklch(37.86% 0.1187 165.49)",
+          "oklch(49.29% 0.1187 165.49)",
+          "oklch(60.71% 0.1187 165.49)",
+          "oklch(72.14% 0.1187 165.49)",
+          "oklch(83.57% 0.1187 165.49)",
+          "oklch(95.00% 0.1187 165.49)"
+        ]
+      },
+      "terminal-error": {
+        "role": "tertiary",
+        "displayName": "Rojo de error",
+        "tonalRamp": [
+          "oklch(15.00% 0.2100 18.08)",
+          "oklch(26.43% 0.2100 18.08)",
+          "oklch(37.86% 0.2100 18.08)",
+          "oklch(49.29% 0.2100 18.08)",
+          "oklch(60.71% 0.2100 18.08)",
+          "oklch(72.14% 0.2100 18.08)",
+          "oklch(83.57% 0.2100 18.08)",
+          "oklch(95.00% 0.2100 18.08)"
+        ]
+      },
+      "prose": {
+        "role": "neutral",
+        "displayName": "Marfil verde",
+        "tonalRamp": [
+          "oklch(15.00% 0.0483 162.32)",
+          "oklch(26.43% 0.0483 162.32)",
+          "oklch(37.86% 0.0483 162.32)",
+          "oklch(49.29% 0.0483 162.32)",
+          "oklch(60.71% 0.0483 162.32)",
+          "oklch(72.14% 0.0483 162.32)",
+          "oklch(83.57% 0.0483 162.32)",
+          "oklch(95.00% 0.0483 162.32)"
+        ]
+      },
+      "overlay": {
+        "role": "neutral",
+        "displayName": "Negro de ayuda",
+        "tonalRamp": [
+          "oklch(15.00% 0.0116 163.54)",
+          "oklch(26.43% 0.0116 163.54)",
+          "oklch(37.86% 0.0116 163.54)",
+          "oklch(49.29% 0.0116 163.54)",
+          "oklch(60.71% 0.0116 163.54)",
+          "oklch(72.14% 0.0116 163.54)",
+          "oklch(83.57% 0.0116 163.54)",
+          "oklch(95.00% 0.0116 163.54)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Ámbar claro de interacción",
+        "tonalRamp": [
+          "oklch(15.00% 0.1303 90.73)",
+          "oklch(26.43% 0.1303 90.73)",
+          "oklch(37.86% 0.1303 90.73)",
+          "oklch(49.29% 0.1303 90.73)",
+          "oklch(60.71% 0.1303 90.73)",
+          "oklch(72.14% 0.1303 90.73)",
+          "oklch(83.57% 0.1303 90.73)",
+          "oklch(95.00% 0.1303 90.73)"
+        ]
+      },
+      "disabled-text": {
+        "role": "neutral",
+        "displayName": "Texto deshabilitado",
+        "tonalRamp": [
+          "oklch(15.00% 0.0817 85.05)",
+          "oklch(26.43% 0.0817 85.05)",
+          "oklch(37.86% 0.0817 85.05)",
+          "oklch(49.29% 0.0817 85.05)",
+          "oklch(60.71% 0.0817 85.05)",
+          "oklch(72.14% 0.0817 85.05)",
+          "oklch(83.57% 0.0817 85.05)",
+          "oklch(95.00% 0.0817 85.05)"
+        ]
+      },
+      "disabled-border": {
+        "role": "neutral",
+        "displayName": "Borde deshabilitado",
+        "tonalRamp": [
+          "oklch(15.00% 0.0686 83.15)",
+          "oklch(26.43% 0.0686 83.15)",
+          "oklch(37.86% 0.0686 83.15)",
+          "oklch(49.29% 0.0686 83.15)",
+          "oklch(60.71% 0.0686 83.15)",
+          "oklch(72.14% 0.0686 83.15)",
+          "oklch(83.57% 0.0686 83.15)",
+          "oklch(95.00% 0.0686 83.15)"
+        ]
+      },
+      "emergency-text": {
+        "role": "primary",
+        "displayName": "Verde de terminal",
+        "tonalRamp": [
+          "oklch(15.00% 0.1011 150.28)",
+          "oklch(26.43% 0.1011 150.28)",
+          "oklch(37.86% 0.1011 150.28)",
+          "oklch(49.29% 0.1011 150.28)",
+          "oklch(60.71% 0.1011 150.28)",
+          "oklch(72.14% 0.1011 150.28)",
+          "oklch(83.57% 0.1011 150.28)",
+          "oklch(95.00% 0.1011 150.28)"
+        ]
+      },
+      "emergency-bg": {
+        "role": "neutral",
+        "displayName": "Negro verde de terminal",
+        "tonalRamp": [
+          "oklch(15.00% 0.0140 151.49)",
+          "oklch(26.43% 0.0140 151.49)",
+          "oklch(37.86% 0.0140 151.49)",
+          "oklch(49.29% 0.0140 151.49)",
+          "oklch(60.71% 0.0140 151.49)",
+          "oklch(72.14% 0.0140 151.49)",
+          "oklch(83.57% 0.0140 151.49)",
+          "oklch(95.00% 0.0140 151.49)"
+        ]
+      },
+      "emergency-line": {
+        "role": "neutral",
+        "displayName": "Verde de marco",
+        "tonalRamp": [
+          "oklch(15.00% 0.0635 150.37)",
+          "oklch(26.43% 0.0635 150.37)",
+          "oklch(37.86% 0.0635 150.37)",
+          "oklch(49.29% 0.0635 150.37)",
+          "oklch(60.71% 0.0635 150.37)",
+          "oklch(72.14% 0.0635 150.37)",
+          "oklch(83.57% 0.0635 150.37)",
+          "oklch(95.00% 0.0635 150.37)"
+        ]
+      },
+      "emergency-muted": {
+        "role": "neutral",
+        "displayName": "Verde secundario",
+        "tonalRamp": [
+          "oklch(15.00% 0.0711 151.03)",
+          "oklch(26.43% 0.0711 151.03)",
+          "oklch(37.86% 0.0711 151.03)",
+          "oklch(49.29% 0.0711 151.03)",
+          "oklch(60.71% 0.0711 151.03)",
+          "oklch(72.14% 0.0711 151.03)",
+          "oklch(83.57% 0.0711 151.03)",
+          "oklch(95.00% 0.0711 151.03)"
+        ]
+      },
+      "emergency-disabled-border": {
+        "role": "neutral",
+        "displayName": "Verde de borde atenuado",
+        "tonalRamp": [
+          "oklch(15.00% 0.0490 149.60)",
+          "oklch(26.43% 0.0490 149.60)",
+          "oklch(37.86% 0.0490 149.60)",
+          "oklch(49.29% 0.0490 149.60)",
+          "oklch(60.71% 0.0490 149.60)",
+          "oklch(72.14% 0.0490 149.60)",
+          "oklch(83.57% 0.0490 149.60)",
+          "oklch(95.00% 0.0490 149.60)"
+        ]
+      },
+      "emergency-meter": {
+        "role": "neutral",
+        "displayName": "Verde de medidor",
+        "tonalRamp": [
+          "oklch(15.00% 0.0392 152.07)",
+          "oklch(26.43% 0.0392 152.07)",
+          "oklch(37.86% 0.0392 152.07)",
+          "oklch(49.29% 0.0392 152.07)",
+          "oklch(60.71% 0.0392 152.07)",
+          "oklch(72.14% 0.0392 152.07)",
+          "oklch(83.57% 0.0392 152.07)",
+          "oklch(95.00% 0.0392 152.07)"
+        ]
+      },
+      "emergency-error": {
+        "role": "tertiary",
+        "displayName": "Rojo de emergencia",
+        "tonalRamp": [
+          "oklch(15.00% 0.1171 28.89)",
+          "oklch(26.43% 0.1171 28.89)",
+          "oklch(37.86% 0.1171 28.89)",
+          "oklch(49.29% 0.1171 28.89)",
+          "oklch(60.71% 0.1171 28.89)",
+          "oklch(72.14% 0.1171 28.89)",
+          "oklch(83.57% 0.1171 28.89)",
+          "oklch(95.00% 0.1171 28.89)"
+        ]
+      },
+      "emergency-hover": {
+        "role": "primary",
+        "displayName": "Verde claro de interacción",
+        "tonalRamp": [
+          "oklch(15.00% 0.0571 150.54)",
+          "oklch(26.43% 0.0571 150.54)",
+          "oklch(37.86% 0.0571 150.54)",
+          "oklch(49.29% 0.0571 150.54)",
+          "oklch(60.71% 0.0571 150.54)",
+          "oklch(72.14% 0.0571 150.54)",
+          "oklch(83.57% 0.0571 150.54)",
+          "oklch(95.00% 0.0571 150.54)"
+        ]
+      },
+      "crt-mask": {
+        "role": "neutral",
+        "displayName": "Negro de máscara CRT",
+        "tonalRamp": [
+          "oklch(15.00% 0 0)",
+          "oklch(26.43% 0 0)",
+          "oklch(37.86% 0 0)",
+          "oklch(49.29% 0 0)",
+          "oklch(60.71% 0 0)",
+          "oklch(72.14% 0 0)",
+          "oklch(83.57% 0 0)",
+          "oklch(95.00% 0 0)"
+        ]
+      },
+      "crt-scanline": {
+        "role": "neutral",
+        "displayName": "Negro de barrido",
+        "tonalRamp": [
+          "oklch(15.00% 0 0 / 0.2000)",
+          "oklch(26.43% 0 0 / 0.2000)",
+          "oklch(37.86% 0 0 / 0.2000)",
+          "oklch(49.29% 0 0 / 0.2000)",
+          "oklch(60.71% 0 0 / 0.2000)",
+          "oklch(72.14% 0 0 / 0.2000)",
+          "oklch(83.57% 0 0 / 0.2000)",
+          "oklch(95.00% 0 0 / 0.2000)"
+        ]
+      },
+      "crt-scanline-reduced": {
+        "role": "neutral",
+        "displayName": "Negro de barrido reducido",
+        "tonalRamp": [
+          "oklch(15.00% 0 0 / 0.1333)",
+          "oklch(26.43% 0 0 / 0.1333)",
+          "oklch(37.86% 0 0 / 0.1333)",
+          "oklch(49.29% 0 0 / 0.1333)",
+          "oklch(60.71% 0 0 / 0.1333)",
+          "oklch(72.14% 0 0 / 0.1333)",
+          "oklch(83.57% 0 0 / 0.1333)",
+          "oklch(95.00% 0 0 / 0.1333)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Cabecera",
+        "purpose": "Identidad y nombre de misión en mayúsculas."
+      },
+      "headline": {
+        "displayName": "Subsistema",
+        "purpose": "Títulos de los tres instrumentos."
+      },
+      "label": {
+        "displayName": "Acción",
+        "purpose": "Etiquetas condensadas de botones."
+      },
+      "readout": {
+        "displayName": "Cantidad",
+        "purpose": "Valores grandes de recursos."
+      },
+      "body": {
+        "displayName": "Explicación",
+        "purpose": "Prosa monoespaciada de bienvenida, hasta 65ch."
+      },
+      "terminal-output": {
+        "displayName": "Historial",
+        "purpose": "Respuestas de la consola y órdenes anteriores, con escala compacta y peso regular."
+      },
+      "command": {
+        "displayName": "Orden",
+        "purpose": "Prompt actual de peso regular, mayor que el historial y separado de su desplazamiento."
+      },
+      "clock": {
+        "displayName": "Reloj",
+        "purpose": "Ventana de retorno con siete segmentos, dentro del bisel lateral y sobre un rótulo de una línea."
+      },
+      "emergency-display": {
+        "displayName": "Cabecera de emergencia",
+        "purpose": "Identidad monoespaciada, compacta y capaz de envolver."
+      },
+      "emergency-headline": {
+        "displayName": "Subsistema en emergencia",
+        "purpose": "Títulos de instrumentos sin halo ni espaciado adicional."
+      },
+      "emergency-label": {
+        "displayName": "Acción en emergencia",
+        "purpose": "Etiquetas monoespaciadas de controles de emergencia."
+      },
+      "emergency-readout": {
+        "displayName": "Cantidad en emergencia",
+        "purpose": "Valores junto a barras horizontales de recursos."
+      },
+      "emergency-clock": {
+        "displayName": "Reloj en emergencia",
+        "purpose": "Ventana de retorno monoespaciada, con las mismas reglas de tiempo."
+      }
+    },
+    "shadows": [
+      {
+        "name": "header-title",
+        "value": "text-shadow: 0 0 3px #ff6a0080, 0 0 12px #ff300048",
+        "purpose": "Halo naranja y rojo de la identidad en la cabecera."
+      },
+      {
+        "name": "instrument-title",
+        "value": "text-shadow: 0 0 2px #ff6a0090, 0 0 8px #ff300050",
+        "purpose": "Halo cálido de los títulos de subsistema; no se aplica a la consola."
+      },
+      {
+        "name": "resource-glow",
+        "value": "filter: drop-shadow(0 0 2px #37f8ab80)",
+        "purpose": "Brillo menta del nivel de los medidores."
+      },
+      {
+        "name": "instrument-frame",
+        "value": "filter: drop-shadow(0 0 2px #ffbe1960)",
+        "purpose": "Halo ámbar del segundo contorno de los paneles."
+      },
+      {
+        "name": "instrument-inset",
+        "value": "box-shadow: inset 0 0 5px #e18a0055",
+        "purpose": "Resplandor cálido interior de las carcasas."
+      },
+      {
+        "name": "instrument-group",
+        "value": "filter: drop-shadow(0 0 2px #ff430060)",
+        "purpose": "Luz cálida alrededor del conjunto de los tres instrumentos."
+      },
+      {
+        "name": "portal-readouts",
+        "value": "filter: drop-shadow(0 0 3px #ff9a0040)",
+        "purpose": "Halo de los biseles del estado del portal y del reloj."
+      },
+      {
+        "name": "portal-status",
+        "value": "text-shadow: 0 0 3px #ff3b4560",
+        "purpose": "Halo rojo de la palabra de estado del portal."
+      },
+      {
+        "name": "clock",
+        "value": "text-shadow: 0 0 7px #ff950060",
+        "purpose": "Halo cálido de los dígitos del reloj."
+      },
+      {
+        "name": "emergency-flat",
+        "value": "text-shadow: none; box-shadow: none",
+        "purpose": "Base sin halos; la superficie completa recibe la distorsión CRT solicitada por el usuario cuando el movimiento está permitido."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "color .15s, background .15s",
+        "purpose": "Transición de botones; se elimina con movimiento reducido."
+      },
+      {
+        "name": "resource-level",
+        "value": "clip-path .9s cubic-bezier(.22,.61,.36,1)",
+        "purpose": "Cambio del nivel de recurso; se elimina con movimiento reducido."
+      },
+      {
+        "name": "portal-opening",
+        "value": "8s",
+        "purpose": "Revelado de la imagen del destino con máscara de remolino, derivado del reloj de misión; inmediato con movimiento reducido."
+      },
+      {
+        "name": "instrument-phase",
+        "value": "game.elapsed * 0.8",
+        "purpose": "Reloj compartido de ondas y portal; se congela con la pausa y vale cero con movimiento reducido."
+      },
+      {
+        "name": "signal-trails",
+        "value": "3 estelas; desfase i * 0.025; intensidad 0.14 / i",
+        "purpose": "Posiciones anteriores de las ondas reales, con menor intensidad que los trazos actuales."
+      },
+      {
+        "name": "signal-sweep",
+        "value": "fract(u_phase * 0.16)",
+        "purpose": "Barrido horizontal de luz sobre las curvas visibles; se omite con movimiento reducido."
+      },
+      {
+        "name": "portal-rotation",
+        "value": "u_phase * active * (0.035 + open * 0.10)",
+        "purpose": "Giro de los anillos segmentados al energizar el toroide; se acelera al abrir y queda estático con movimiento reducido."
+      },
+      {
+        "name": "portal-transfer",
+        "value": "game.transferred / 10",
+        "purpose": "Progreso real que modifica el arco, la mezcla cian/magenta del campo y la intensidad de las partículas."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "Sin barridos ni glitch ni arranque espacial del toroide. Énfasis HTML suaves de 300 ms y confirmación escrita; fase de instrumentos fija."
+      },
+      {
+        "name": "command-response",
+        "value": "1200ms; linear; énfasis hasta el 65 %",
+        "purpose": "Barrido, contención y rótulo de operación; confirmación inmediata y sin bloqueo."
+      },
+      {
+        "name": "toroid-ignition",
+        "value": "3600ms; tiempo de misión",
+        "purpose": "Carga, ruido eléctrico turbulento, confinamiento y estabilización. Se congela al pausar y solo dibuja mientras está visible."
+      },
+      {
+        "name": "emergency-static",
+        "value": "animation: none; transition: none; fase de ondas: 0",
+        "purpose": "Base de instrumentos sin dibujo WebGL ni respuesta animada; ondas SVG de fase fija y lecturas con datos reales. El filtro CRT global es una excepción explícita; alternar la presentación no pausa la misión."
+      },
+      {
+        "name": "emergency-crt",
+        "value": "máximo 24fps; desplazamiento por fila ≤3px por eje; salto vertical ≤4.5px; rojo y azul ±1px",
+        "purpose": "Ruido SVG repetido por filas sobre el HTML real y un lienzo Canvas 2D de 128 × 64 para la interferencia inferior. La pausa congela el efecto, la pestaña oculta suspende el dibujo y salir de emergencia retira la distorsión."
+      },
+      {
+        "name": "emergency-scan-band",
+        "value": "banda de 200px; 35px/s; líneas estáticas de 1px cada 4px",
+        "purpose": "Barrido suave y ruido inferior sobre la superficie de emergencia. La banda comparte el reloj de presentación que se congela con la pausa."
+      },
+      {
+        "name": "emergency-reduced-motion",
+        "value": "solo líneas estáticas; sin desplazamiento, separación RGB ni ruido",
+        "purpose": "Excepción CRT desactivada con movimiento reducido. Los fallos de Canvas 2D o de generación de mapas conservan la presentación básica sin filtro animado."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1350px"
+      },
+      {
+        "name": "header-utilities",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "560px"
+      },
+      {
+        "name": "short-window-height",
+        "value": "650px"
+      }
+    ],
+    "localization": {
+      "languages": [
+        "en",
+        "ja",
+        "es"
+      ],
+      "selector": "Help > Language",
+      "default": "es",
+      "consoleLanguage": "en",
+      "japaneseFonts": [
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        "Noto Sans JP"
+      ],
+      "resourceLabelSize": "clamp(11px, 16cqw, 20px)",
+      "guideMaxHeight": "calc(100dvh - 86px)",
+      "narrowStackMaxWidth": "380px",
+      "narrowStackRows": [
+        "220px",
+        "220px",
+        "300px"
+      ],
+      "mobileRows": [
+        "220px",
+        "260px"
+      ],
+      "tabletClockMinWidth": "104px",
+      "desktopReadoutsMinWidth": "112px",
+      "clockWrap": false
+    }
+  },
+  "components": [
+    {
+      "name": "Acción principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Iniciar, confirmar reinicio o volver a jugar.",
+      "html": "<button class=\"ds-primary\" type=\"button\">Iniciar misión</button>",
+      "css": ".ds-primary { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: clamp(16px, 1.4vw, 24px); color: var(--amber, #ffbe19); background: var(--black, #080707); border: 1px solid var(--line, #f0ad0c); min-height: 36px; padding: 3px 12px; text-transform: uppercase; cursor: pointer; transition: color .15s, background .15s; background: var(--amber, #ffbe19); color: var(--black, #080707); font-weight: 700; }.ds-primary:hover:not(:disabled) { color: var(--black, #080707); background: #ffdb72; }.ds-primary:focus-visible { outline: 2px solid var(--mint, #37f8ab); outline-offset: -4px; }.ds-primary:disabled { color: #b69b62; border-color: #665023; cursor: not-allowed; }@media(prefers-reduced-motion: reduce) { .ds-primary { transition: none; } }"
+    },
+    {
+      "name": "Acción secundaria",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción con contorno, como fijar la señal.",
+      "html": "<button class=\"ds-secondary\" type=\"button\">Fijar señal</button>",
+      "css": ".ds-secondary { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: clamp(16px, 1.4vw, 24px); color: var(--amber, #ffbe19); background: var(--black, #080707); border: 1px solid var(--line, #f0ad0c); min-height: 36px; padding: 3px 12px; text-transform: uppercase; cursor: pointer; transition: color .15s, background .15s; }.ds-secondary:hover:not(:disabled) { color: var(--black, #080707); background: var(--amber, #ffbe19); }.ds-secondary:focus-visible { outline: 2px solid var(--mint, #37f8ab); outline-offset: -4px; }.ds-secondary:disabled { color: #b69b62; border-color: #665023; cursor: not-allowed; }@media(prefers-reduced-motion: reduce) { .ds-secondary { transition: none; } }"
+    },
+    {
+      "name": "Utilidad",
+      "kind": "button",
+      "refersTo": "button-utility",
+      "description": "Ayuda sin marco completo, dentro de la cabecera.",
+      "html": "<button class=\"ds-utility\" type=\"button\">Ayuda</button>",
+      "css": ".ds-utility { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: clamp(16px, 1.4vw, 24px); color: var(--amber, #ffbe19); background: var(--black, #080707); border: 1px solid var(--line, #f0ad0c); min-height: 36px; padding: 3px 12px; text-transform: uppercase; cursor: pointer; transition: color .15s, background .15s; border: 0; }.ds-utility:hover:not(:disabled) { color: var(--black, #080707); background: var(--amber, #ffbe19); }.ds-utility:focus-visible { outline: 2px solid var(--mint, #37f8ab); outline-offset: -4px; }.ds-utility:disabled { color: #b69b62; border-color: #665023; cursor: not-allowed; }@media(prefers-reduced-motion: reduce) { .ds-utility { transition: none; } }"
+    },
+    {
+      "name": "Selector de señal",
+      "kind": "chip",
+      "refersTo": "signal-choice-selected",
+      "description": "Selección mediante botón inclinado; la cifra permanece vertical.",
+      "html": "<div class=\"ds-signals\" role=\"group\" aria-label=\"Señal\"><button class=\"ds-signal\" type=\"button\" aria-pressed=\"false\"><span>01</span></button><button class=\"ds-signal\" type=\"button\" aria-pressed=\"true\"><span>02</span></button></div>",
+      "css": ".ds-signal { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: clamp(16px, 1.4vw, 24px); color: var(--amber, #ffbe19); background: var(--black, #080707); border: 1px solid var(--line, #f0ad0c); min-height: 36px; padding: 3px 12px; text-transform: uppercase; cursor: pointer; transition: color .15s, background .15s; }.ds-signal:hover:not(:disabled) { color: var(--black, #080707); background: var(--amber, #ffbe19); }.ds-signal:focus-visible { outline: 2px solid var(--mint, #37f8ab); outline-offset: -4px; }.ds-signal:disabled { color: #b69b62; border-color: #665023; cursor: not-allowed; }@media(prefers-reduced-motion: reduce) { .ds-signal { transition: none; } }.ds-signals { display: flex; align-items: center; gap: 6px; } .ds-signal { padding: 2px 9px; font-size: clamp(18px, 1.6vw, 27px); font-weight: 700; min-width: 32px; transform: skewX(-9deg); } .ds-signal span { display: inline-block; transform: skewX(9deg); } .ds-signal[aria-pressed=\"true\"] { background: var(--mint, #37f8ab); color: var(--black, #080707); border-color: var(--mint, #37f8ab); }"
+    },
+    {
+      "name": "Control de ajuste",
+      "kind": "input",
+      "refersTo": "input-range",
+      "description": "Control nativo alternativo para ajustar la frecuencia.",
+      "html": "<label class=\"ds-range-label\">Frecuencia<input class=\"ds-range\" type=\"range\" min=\"0.5\" max=\"6\" step=\"0.1\" value=\"3.2\" aria-label=\"Frecuencia en hercios\"></label>",
+      "css": ".ds-range-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 20px; color: var(--amber, #ffbe19); } .ds-range { display: block; width: 100%; margin: 9px 0 16px; height: 25px; accent-color: var(--mint, #37f8ab); } .ds-range:focus-visible { outline: 2px solid var(--mint, #37f8ab); outline-offset: -4px; }"
+    },
+    {
+      "name": "Carcasa de instrumento",
+      "kind": "card",
+      "refersTo": "instrument-panel",
+      "description": "Panel con recortes de 12px y doble borde; las lecturas ocupan su interior negro.",
+      "html": "<section class=\"ds-panel\" aria-label=\"Ichidai\"><h2 class=\"ds-panel-heading\">Ichidai / Recursos</h2><div class=\"ds-resources\"><div class=\"ds-resource\"><span class=\"ds-resource-label\">Energía</span><strong class=\"ds-resource-value\">55%</strong></div></div></section>",
+      "css": ".ds-panel { --cut: 12px; position: relative; isolation: isolate; background: var(--line, #f0ad0c); color: var(--amber, #ffbe19); clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut)); min-width: 0; min-height: 0; padding: 3px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; } .ds-panel::before { content: \"\"; position: absolute; z-index: -1; inset: 2px; box-shadow: inset 0 0 5px #e18a0055; background: var(--black, #080707); clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut)); } .ds-panel::after { filter: drop-shadow(0 0 2px #ffbe1960); content: \"\"; position: absolute; pointer-events: none; z-index: -1; inset: 5px; background: var(--line, #f0ad0c); clip-path: polygon(evenodd, 9px 0, calc(100% - 9px) 0, 100% 9px, 100% calc(100% - 9px), calc(100% - 9px) 100%, 9px 100%, 0 calc(100% - 9px), 0 9px, 9px 0, 9px 1px, 1px 9px, 1px calc(100% - 9px), 9px calc(100% - 1px), calc(100% - 9px) calc(100% - 1px), calc(100% - 1px) calc(100% - 9px), calc(100% - 1px) 9px, calc(100% - 9px) 1px, 9px 1px); } .ds-panel-heading { margin: 0; min-height: 46px; padding: 3px 18px 7px; border-bottom: 1px solid var(--line, #f0ad0c); font-size: clamp(20px, 2.2vw, 37px); letter-spacing: .018em; text-shadow: 0 0 2px #ff6a0090, 0 0 8px #ff300050; font-weight: 600; line-height: 1; text-transform: uppercase; } .ds-resources { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 14px 0 12px 8px; margin-right: -6px; } .ds-resource { display: flex; align-items: center; flex-direction: column; gap: 8px; } .ds-resource-label { font-size: clamp(14px, 1.25vw, 23px); text-transform: uppercase; } .ds-resource-value { font-size: clamp(25px, 2.6vw, 45px); font-weight: 700; line-height: 1; color: var(--mint, #37f8ab); } @media(max-width: 1350px) { .ds-resources { padding-inline: 12px; } } @media(max-width: 900px) { .ds-resources { padding: 4px 13px; gap: 5px; margin-right: 0; } } @media(max-width: 560px) { .ds-resources { padding-inline: 8px; gap: 4px; } }"
+    },
+    {
+      "name": "Estado en flecha",
+      "kind": "chip",
+      "refersTo": "reader-state",
+      "description": "Indicador no interactivo del lector; combina texto, marcador y color.",
+      "html": "<p class=\"ds-reader\"><i class=\"ds-dot\" aria-hidden=\"true\"></i>Lector <strong>en línea</strong></p>",
+      "css": ".ds-reader { margin: 0; position: relative; isolation: isolate; border: 0; background: var(--line, #f0ad0c); color: var(--mint, #37f8ab); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%); padding: 3px 9px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: clamp(17px, 1.45vw, 25px); line-height: 1.15; text-transform: uppercase; } .ds-reader::before { content: \"\"; position: absolute; z-index: -1; inset: 1px; background: var(--black, #080707); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%); } .ds-dot { width: 10px; height: 10px; margin-right: 8px; display: inline-block; border: 1px solid currentColor; background: currentColor; }"
+    },
+    {
+      "name": "Controles de misión",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Grupo de acciones de la cabecera; la pantalla completa desaparece en móvil.",
+      "html": "<nav class=\"ds-navigation\" aria-label=\"Controles de la misión\"><button class=\"ds-nav-button ds-emergency\" type=\"button\" aria-pressed=\"false\" title=\"Activar protocolo de emergencia\">Emergencia</button><button class=\"ds-nav-button ds-sound\" type=\"button\" aria-pressed=\"false\">Sonido off</button><button class=\"ds-nav-button ds-pause\" type=\"button\">Pausa</button><button class=\"ds-nav-button ds-help\" type=\"button\">Ayuda</button><button class=\"ds-nav-button ds-fullscreen\" type=\"button\" aria-label=\"Entrar en pantalla completa\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 3H3v6m12-6h6v6M3 15v6h6m6 0h6v-6\" /></svg></button></nav>",
+      "css": ".ds-nav-button { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: clamp(16px, 1.4vw, 24px); color: var(--amber, #ffbe19); background: var(--black, #080707); border: 1px solid var(--line, #f0ad0c); min-height: 36px; padding: 3px 12px; text-transform: uppercase; cursor: pointer; transition: color .15s, background .15s; border: 0; }.ds-nav-button:hover:not(:disabled) { color: var(--black, #080707); background: var(--amber, #ffbe19); }.ds-nav-button:focus-visible { outline: 2px solid var(--mint, #37f8ab); outline-offset: -4px; }.ds-nav-button:disabled { color: #b69b62; border-color: #665023; cursor: not-allowed; }@media(prefers-reduced-motion: reduce) { .ds-nav-button { transition: none; } }.ds-navigation { display: flex; align-items: center; gap: 10px; } .ds-nav-button { white-space: nowrap; } .ds-pause { border-right: 1px solid var(--line, #f0ad0c); } .ds-sound { --cut: 7px; position: relative; isolation: isolate; background: var(--line, #f0ad0c); clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut)); } .ds-sound::before { content: \"\"; position: absolute; z-index: -1; inset: 1px; background: var(--black, #080707); clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut)); } .ds-sound:hover::before { background: var(--amber, #ffbe19); } .ds-sound[aria-pressed=\"true\"] { color: var(--mint, #37f8ab); } .ds-fullscreen { width: 38px; padding: 6px; border-color: transparent; } .ds-fullscreen svg { display: block; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; } @media(max-width: 1350px) { .ds-navigation { gap: 5px; } .ds-nav-button { padding-inline: 7px; } } @media(max-width: 560px) { .ds-nav-button { font-size: 15px; min-height: 36px; padding-inline: 6px; } .ds-fullscreen { display: none; } } .ds-emergency[aria-pressed=\"true\"] { background: var(--mint, #37f8ab); color: var(--black, #080707); } @media(max-width: 560px) { .ds-navigation { flex-wrap: wrap; } }"
+    },
+    {
+      "name": "Orden actual",
+      "kind": "custom",
+      "refersTo": "command",
+      "description": "Muestra visual del prompt; la interacción real pertenece a jQuery Terminal.",
+      "html": "<div class=\"ds-command\">minerva &gt; sandai scan</div>",
+      "css": ".ds-command { background: var(--black, #080707); color: var(--amber, #ffbe19); padding: 9px 0; font-family: 'IBM Plex Mono', monospace; font-size: clamp(18px, 1.6vw, 28px); font-weight: 400; line-height: 1.25em; overflow-wrap: anywhere; } @media(max-width: 900px) { .ds-command { font-size: 20px; } } @media(max-width: 560px) { .ds-command { font-size: 17px; } }"
+    },
+    {
+      "name": "Lectura de recurso",
+      "kind": "custom",
+      "refersTo": "instrument-panel",
+      "description": "Muestra de cantidad con menta y cifras tabulares, sin una simulación independiente.",
+      "html": "<div class=\"ds-readout\"><span class=\"ds-readout-label\">Refrigeración</span><strong class=\"ds-readout-value\">100%</strong></div>",
+      "css": ".ds-readout { display: flex; align-items: center; flex-direction: column; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--amber, #ffbe19); } .ds-readout-label { font-size: clamp(14px, 1.25vw, 23px); text-transform: uppercase; white-space: nowrap; } .ds-readout-value { font-size: clamp(25px, 2.6vw, 45px); color: var(--mint, #37f8ab); font-weight: 700; line-height: 1; }"
+    },
+    {
+      "name": "Control de emergencia",
+      "kind": "button",
+      "refersTo": "button-emergency",
+      "description": "Control recto de la variante de terminal; aria-pressed expresa el protocolo activo y vuelve a la interfaz principal al desactivarlo.",
+      "html": "<button class=\"ds-emergency-control\" type=\"button\" aria-pressed=\"true\" title=\"Desactivar protocolo de emergencia\">Emergencia</button>",
+      "css": ".ds-emergency-control { --amber: #a4e8b2; --mint: #a4e8b2; --line: #52785a; --muted: #8cba96; --black: #050a06; --red: #ff9f91; font-family: var(--mono, 'IBM Plex Mono', monospace); background: var(--black); color: var(--amber); border: 1px solid var(--line); min-height: 36px; padding: 5px 8px; font-size: 12px; font-weight: 400; text-transform: uppercase; cursor: pointer; } .ds-emergency-control:hover:not(:disabled), .ds-emergency-control[aria-pressed=\"true\"] { background: var(--mint); color: var(--black); } .ds-emergency-control:focus-visible { outline: 2px solid var(--mint); outline-offset: -4px; } .ds-emergency-control:disabled { background: var(--black); color: var(--muted); border-color: #38533d; cursor: not-allowed; } @media(max-width: 560px) { .ds-emergency-control { font-size: 11px; padding-inline: 5px; } }"
+    },
+    {
+      "name": "Acción principal en emergencia",
+      "kind": "button",
+      "refersTo": "button-emergency-primary",
+      "description": "Acción principal de fondo verde pálido, con respuesta inmediata al hover y al foco.",
+      "html": "<button class=\"ds-emergency-primary\" type=\"button\">Iniciar misión</button>",
+      "css": ".ds-emergency-primary { --amber: #a4e8b2; --mint: #a4e8b2; --line: #52785a; --muted: #8cba96; --black: #050a06; --red: #ff9f91; font-family: var(--mono, 'IBM Plex Mono', monospace); background: var(--black); color: var(--amber); border: 1px solid var(--line); min-height: 36px; padding: 5px 8px; font-size: 12px; font-weight: 400; text-transform: uppercase; cursor: pointer; background: var(--amber); color: var(--black); font-weight: 700; } .ds-emergency-primary:hover:not(:disabled) { background: #d3f9da; } .ds-emergency-primary:focus-visible { outline: 2px solid var(--mint); outline-offset: -4px; } .ds-emergency-primary:disabled { color: var(--muted); border-color: #38533d; cursor: not-allowed; }"
+    },
+    {
+      "name": "Instrumento de emergencia",
+      "kind": "card",
+      "refersTo": "instrument-panel-emergency",
+      "description": "Marco recto y lectura con barra horizontal; muestra del componente base sin el filtro CRT global ni una simulación independiente.",
+      "html": "<section class=\"ds-emergency-panel\" aria-label=\"Ichidai\"><h2 class=\"ds-emergency-heading\">Ichidai / Recursos</h2><div class=\"ds-emergency-resources\"><div class=\"ds-emergency-resource\"><span class=\"ds-emergency-resource-label\">Refrigeración</span><strong class=\"ds-emergency-resource-value\">100%</strong><div class=\"ds-emergency-meter\" aria-hidden=\"true\"><span class=\"ds-emergency-fill\"></span></div></div></div></section>",
+      "css": ".ds-emergency-panel { --amber: #a4e8b2; --mint: #a4e8b2; --line: #52785a; --muted: #8cba96; --black: #050a06; --red: #ff9f91; font-family: var(--mono, 'IBM Plex Mono', monospace); background: var(--black); color: var(--amber); border: 1px solid var(--line); padding: 3px; font-weight: 400; font-variant-numeric: tabular-nums; } .ds-emergency-heading { margin: 0; min-height: 38px; padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: clamp(12px, 1.1vw, 17px); font-weight: 600; line-height: 1.4; letter-spacing: 0; text-transform: uppercase; } .ds-emergency-resources { display: flex; flex-direction: column; gap: 14px; padding: 16px; } .ds-emergency-resource { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; } .ds-emergency-resource-label { font-size: 12px; } .ds-emergency-resource-value { font-size: 20px; font-weight: 700; line-height: 1; } .ds-emergency-meter { grid-column: 1 / -1; height: 6px; background: #152a1b; } .ds-emergency-fill { display: block; width: 100%; height: 100%; background: var(--mint); } @media(max-width: 560px) { .ds-emergency-heading { font-size: 14px; } .ds-emergency-resource-value { font-size: 18px; } .ds-emergency-resources { gap: 10px; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Puente de mando",
+    "overview": "Minerva se presenta como una máquina que se opera mediante órdenes escritas. La referencia elegida por el usuario es la UI de Evangelion: negro dominante, trazos luminosos, rótulos condensados y carcasas angulares. Los instrumentos muestran consecuencias verificables de la partida; la consola mantiene la prioridad de interacción.\n\nLa densidad pertenece a un panel de control, con marcos que conectan los subsistemas y lecturas grandes que se distinguen del historial. La luz se concentra en señales y anillos, con halos cálidos en títulos, marcos y lecturas de Nidai y brillo menta en los medidores. El texto permanece nítido y la ornamentación estructural no sustituye etiquetas, estados ni controles accesibles.\n\nEl protocolo de emergencia es una variante conmutable de terminal antiguo: texto verde pálido, monoespaciada, marcos rectos y distorsión de televisión sobre la interfaz real. Por petición expresa del usuario, esta variante permite desplazar levemente el texto, separar sus canales y superponer barrido y ruido. Comparte los controles y el estado de la interfaz principal; al alternarlo se conservan el progreso, la pausa, el historial y la orden en curso. No modifica las reglas ni detiene el reloj de misión. La preferencia de presentación dura hasta recargar la página.",
+    "keyCharacteristics": [
+      "Negro de fondo y ámbar para la estructura y las órdenes.",
+      "Menta para recursos y lecturas; cian y magenta para comparar señales.",
+      "Marcos recortados, doble borde y conexiones entre instrumentos.",
+      "Rótulos condensados, consola monoespaciada y reloj de siete segmentos.",
+      "Efectos ligados a datos reales, con pausa, movimiento reducido y alternativa SVG.",
+      "Protocolo de emergencia reversible, con información operativa y distorsión de televisión antigua; líneas estáticas con movimiento reducido."
+    ],
+    "rules": [
+      {
+        "name": "The Señal con significado Rule",
+        "body": "Mantener cian para la referencia, magenta para el ajuste y menta para las lecturas; expresar también el estado mediante texto, selección o geometría.",
+        "section": "colors"
+      },
+      {
+        "name": "The Orden visible Rule",
+        "body": "El prompt permanece separado del historial desplazable y con una escala mayor; no reducir ambos a una sola jerarquía de texto.",
+        "section": "typography"
+      },
+      {
+        "name": "The Luz instrumental Rule",
+        "body": "En la interfaz principal, contener el brillo y el movimiento en la información del instrumento y mantener nítidos el texto, el prompt y los controles. La distorsión de televisión sobre el texto solo se permite en emergencia, por petición expresa del usuario, y se elimina con movimiento reducido.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** conservar la consola como entrada principal y mostrar las consecuencias en los instrumentos.",
+      "**Do** usar texto, forma y estado accesible junto al color para explicar selección, bloqueo o disponibilidad.",
+      "**Do** mantener la relación cian/referencia, magenta/jugador y menta/lecturas.",
+      "**Do** conservar el prompt fuera del desplazamiento del historial y ofrecer una salida de foco por teclado.",
+      "**Do** derivar los efectos del estado real y mantener pausa, movimiento reducido y alternativa SVG.",
+      "**Do** servir las fuentes locales y preservar la separación entre rótulos, órdenes y reloj.",
+      "**Do** mantener los controles, los datos y la orden en curso al alternar el protocolo de emergencia.",
+      "**Do** conservar cian y magenta en emergencia, con referencia discontinua y ajuste continuo."
+    ],
+    "donts": [
+      "**Don't** sustituir las carcasas angulares por una familia de tarjetas redondeadas.",
+      "**Don't** aplicar brillo, desenfoque o postprocesado al texto de la consola principal; la distorsión CRT solicitada es una excepción exclusiva de emergencia.",
+      "**Don't** mostrar datos de demostración como si fueran estados de la partida.",
+      "**Don't** añadir movimiento de cámara ni destellos de pantalla a los efectos instrumentales.",
+      "**Don't** ocultar controles necesarios para operar al adaptar la vista compacta.",
+      "**Don't** interpretar la composición de escritorio como una obligación de eliminar el desplazamiento vertical en móvil.",
+      "**Don't** convertir el protocolo de emergencia en una pausa, un reinicio o una variante de las reglas de juego.",
+      "**Don't** reintroducir los halos y las animaciones instrumentales o el dibujo WebGL en emergencia; mantener la distorsión CRT acotada y respetar pausa y movimiento reducido."
+    ]
+  }
+}

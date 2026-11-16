@@ -1,0 +1,25 @@
+{
+  "name": "minerva-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.6",
+    "@fontsource/public-sans": "^5.2.6",
+    "howler": "2.2.4",
+    "jquery": "3.7.1",
+    "jquery.terminal": "2.48.1"
+  },
+  "devDependencies": {
+    "@types/howler": "^2.2.12",
+    "typescript": "^5.9.3",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  }
+}
