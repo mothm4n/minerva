@@ -12,6 +12,8 @@
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm test",
     "test:e2e": "playwright test",
+    "test:visual": "playwright test tests/browser/visual.e2e.ts",
+    "capture:ui": "MINERVA_CAPTURE=1 playwright test tests/browser/visual.e2e.ts --max-failures=1 --output=output/ui-capture",
     "ci:local": "npm run check && npm run test:e2e",
     "hooks:install": "git config --local core.hooksPath .githooks",
     "setup": "playwright install chromium && npm run hooks:install"

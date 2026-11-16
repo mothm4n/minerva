@@ -200,6 +200,19 @@ El protocolo de emergencia es una variante conmutable de terminal antiguo: texto
 
 Este documento describe la implementación de `index.html`, `src/style.css`, `src/main.ts`, `src/effects.ts`, `src/crt.ts` y `src/shaders/`. La composición aprobada se conserva en `.impeccable/surfaces/index-html.md`; no existe una semilla conceptual adicional. El sistema registrado no constituye una aprobación de fidelidad por píxeles.
 
+## Validación de la interfaz
+
+Desde el 16 de noviembre de 2026, por petición del usuario, el criterio de cierre combina la composición A con las adaptaciones posteriores documentadas en PRODUCT.md y este archivo. `npm run test:visual` comprueba geometría y legibilidad en el navegador; forma parte de `ci:local`. La revisión visual valora marcos, jerarquía, color y coherencia de los efectos con EFECTOS.md sobre capturas actuales. Aprobar las pruebas no certifica por sí solo el acabado artístico.
+
+- Mantener tres instrumentos arriba y consola a todo el ancho debajo en escritorio, con Sandai dominante. En móvil se admite el desplazamiento y la redistribución descritos en Layout.
+- Mantener el historial compacto (13-18px) y el prompt independiente y mayor (17-28px). El tamaño original del boceto fue sustituido expresamente por el usuario.
+- Comprobar sincronía al 100 %, transferencia de dos cifras y lecturas completas dentro de Nidai en los tres idiomas. Número y símbolo permanecen juntos. Las pruebas de presentación cubren además pausa, movimiento reducido y alternativa sin WebGL.
+- Comparar los estados reales: texto, frecuencia, progreso, imagen del destino y movimiento siguen la partida. Sus diferencias respecto a una imagen fija son esperadas; las curvas y geometría SVG son instrumentos de datos.
+
+El resultado histórico de Impeccable (71,39 % frente al 72 %) permanece en `.impeccable/build/state.json` y sus informes locales, sin alterarlo ni declararlo superado. Es una comparación con el boceto anterior a estas adaptaciones, no el criterio de cierre vigente. Un `fix` de ese registro requiere traducirse a un defecto reproducible del contrato actual antes de abrir trabajo. El porcentaje global y los falsos positivos ya documentados sobre tamaño del prompt o SVG no exigen modificar la UI.
+
+Para revisar un cambio: ejecutar `ci:local`, generar evidencias con `capture:ui` y valorar únicamente las diferencias del lote frente a este contrato. Anotar defectos concretos pendientes o cerrar el lote si no quedan; conservar por separado cualquier resultado histórico. Un nuevo cambio de dirección requiere una petición del usuario y actualizar este contrato.
+
 ## Colors
 
 La paleta combina tinta negra y señalización luminosa con funciones diferenciadas. Los valores del frontmatter son la referencia normativa; las bandas tonales del sidecar son muestras auxiliares generadas para el visor, no colores adicionales de la interfaz.

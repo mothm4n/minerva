@@ -127,6 +127,8 @@ npm run ci:local
 | --- | --- |
 | `npm run check` | Oxlint, TypeScript y pruebas Vitest, incluidos los hashes de los 16 audios originales. |
 | `npm run test:e2e` | Compilación nueva y pruebas de navegador con Playwright. |
+| `npm run test:visual` | Contrato visual vigente: composición A, consola compacta, 100 % de sincronía y transferencia sin recortes en seis tamaños y tres idiomas. |
+| `npm run capture:ui` | El mismo recorrido con capturas y vídeos WebM en `output/ui-capture/`, visibles en el informe HTML. |
 | `npm run ci:local` | Todos los controles anteriores, en este equipo. |
 | `npm run test:e2e -- --headed` | Las mismas pruebas con el navegador visible. |
 | `npx playwright show-report` | Informe del último recorrido de navegador. |
@@ -136,6 +138,20 @@ Antes de cada commit se ejecuta `check`. Antes de cada push se exige una copia d
 Playwright arranca y detiene su propio servidor de producción en `127.0.0.1:4175`. Si el puerto está ocupado falla, sin reutilizar otra aplicación; puedes cambiarlo con `MINERVA_TEST_PORT=4180 npm run test:e2e`. Cada prueba tiene un navegador aislado de las partidas personales. Los recorridos cubren victoria, pausa, recuperación, reinicio confirmado, teclado, idiomas, emergencia, pérdida del contexto WebGL, alternativa sin WebGL, movimiento reducido y tamaños de móvil, tableta y escritorio.
 
 Los tests permanentes están en `tests/browser/`. Los fallos dejan capturas y trazas en `test-results/`, y el informe HTML en `playwright-report/`. Estas carpetas, las grabaciones de `output/` y las revisiones antiguas de `.impeccable/review/` permanecen locales. Las comprobaciones automáticas usan Chromium; los registros históricos de otros navegadores no forman parte de este CI.
+
+La aceptación visual sigue [DESIGN.md - Validación de la interfaz](DESIGN.md#validación-de-la-interfaz). La comparación histórica de Impeccable conserva su resultado original; las adaptaciones solicitadas (consola pequeña, datos reales y animaciones) se evalúan mediante el contrato actual. La valoración del acabado corresponde a la revisión de las capturas.
+
+`capture:ui` compila y abre su propio servidor y navegador con la misma configuración de las pruebas. Se detiene al primer fallo; un vídeo de una prueba fallida sirve para diagnosticar y no acredita una entrega correcta. Playwright finaliza los WebM al cerrar cada contexto; no se necesita conversión ni una ruta de caché de `npx`. El informe reúne las capturas de composición y transferencia y los vídeos. Cada ejecución sustituye su directorio de resultados: guarda fuera de él cualquier evidencia que quieras conservar.
+
+### Chats simultáneos
+
+Para trabajar en paralelo, asigna una copia y una rama a cada chat antes de editar. Por ejemplo, desde una versión guardada en Git:
+
+```sh
+git worktree add -b codex/ajuste-ui ../Minerva-ajuste-ui main
+```
+
+Abre ese directorio en el chat correspondiente, instala las dependencias y activa los controles con los pasos anteriores. Usa un nombre de rama y directorio distinto para cada tarea. Si dos recorridos de navegador coinciden, asigna otro puerto con `MINERVA_TEST_PORT=4180 npm run ci:local` o `MINERVA_TEST_PORT=4180 npm run capture:ui`. Los cambios sin commit de otra copia no se trasladan al nuevo worktree. Reúne los cambios terminados en la rama de destino y ejecuta allí `ci:local` antes de publicar; genera las evidencias finales sobre esa misma versión.
 
 Vite muestra una advertencia por un `eval` interno de jQuery Terminal. La invocación de métodos desde la salida está desactivada (`invokeMethods: false`), las respuestas se escapan y no se ejecutan órdenes desde el fragmento de la URL.
 

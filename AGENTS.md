@@ -5,4 +5,5 @@
 - Los comandos de instalación y comprobación están en `README.md`. Ejecuta `npm run check` al cambiar código y `npm run ci:local` antes de publicar. El CI es local; conserva las pruebas de navegador en `tests/browser/`.
 - `public/sounds/originals.json` identifica los audios originales. Las pruebas verifican sus bytes. Consulta el código antiguo con `git show v1.0.0-openframeworks:src/testApp.cpp` sin cambiar de rama ni descargarlo otra vez.
 - `output/` y `.impeccable/review/` son evidencias locales descartables. Conserva en Git las pruebas que deban poder repetirse.
+- Para validar la UI, aplica «Validación de la interfaz» en `DESIGN.md`; para capturas y chats simultáneos, sigue los recorridos de `README.md`.
 - Usa el guion corto (`-`) como separador al redactar.
