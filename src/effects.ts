@@ -17,7 +17,7 @@ export function effectState(game: Game, reducedMotion: boolean) {
   const open = game.stage === 'open' || game.stage === 'transfer';
   const progress = game.stage === 'won' ? 1 : game.stage === 'transfer' ? game.transferred / 10 : open ? game.remaining / 45 : 0;
   return {
-    image: destination.image,
+    image: `${import.meta.env.BASE_URL}${destination.image.slice(1)}`,
     phase: reducedMotion ? 0 : game.elapsed * 0.8,
     visible: index(game) >= 6 ? 1 : 0,
     signal: [game.frequency, game.amplitude, destination.frequency, destination.amplitude],

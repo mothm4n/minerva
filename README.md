@@ -2,6 +2,8 @@
 
 Primer prototipo web jugable de [Minerva](https://github.com/mothm4n/minerva). Una misión para un jugador: recuperar los tres subsistemas, encontrar la señal de casa y atravesar el portal antes de que se cierre.
 
+[Jugar en el navegador](https://mothm4n.github.io/minerva/).
+
 La UI adopta la propuesta A - Puente de mando elegida por el usuario: instrumentos arriba y consola ancha debajo, a pantalla completa. Las referencias de Evangelion y la elección están en [REFERENCIAS_UI.md](REFERENCIAS_UI.md).
 
 La investigación de referencias de Evangelion y posibles estilos está en [RESEARCH_UI_EVANGELION.md](RESEARCH_UI_EVANGELION.md). El sistema implementado está documentado en [DESIGN.md](DESIGN.md) y la capa gráfica en [EFECTOS.md](EFECTOS.md).
@@ -36,7 +38,7 @@ npm ci
 npm run dev
 ```
 
-Abre la dirección que muestra Vite, normalmente http://127.0.0.1:5173. Pulsa **Start mission**. El botón **Ayuda** abre la guía para preparar la siguiente orden; pulsa Enter en la consola para ejecutarla.
+Abre la dirección que muestra Vite, normalmente http://127.0.0.1:5173/minerva/. Pulsa **Start mission**. El botón **Ayuda** abre la guía para preparar la siguiente orden; pulsa Enter en la consola para ejecutarla.
 
 En **Ayuda > Idioma** puedes elegir English, 日本語 o Castellano. La interfaz, la guía y los diálogos cambian al instante, sin reiniciar la partida ni borrar la orden en curso. La consola completa, incluidas sus respuestas, bitácora, pistas y pantalla de inicio, permanece siempre en inglés. El idioma se guarda por separado en `minerva.language`; si el navegador impide guardarlo, se mantiene durante la sesión y se muestra un aviso. El idioma inicial es castellano.
 
@@ -109,7 +111,19 @@ npm run build
 npm run preview
 ```
 
-La compilación genera `dist/`, una aplicación estática que se puede servir desde la raíz de un alojamiento web. No necesita servidor de juego, cuentas ni servicios externos.
+La compilación genera `dist/`, una aplicación estática preparada para la ruta `/minerva/` de GitHub Pages. No necesita servidor de juego ni cuentas. Para otro alojamiento, ajusta `base` en `vite.config.ts`.
+
+## Publicación automática
+
+[GitHub Pages](https://mothm4n.github.io/minerva/) publica cada push a `main` mediante `.github/workflows/pages.yml`. El workflow instala las dependencias, ejecuta `ci:local` y publica el mismo `dist/` que se ha probado. Si una comprobación falla, la versión pública anterior se conserva. También admite ejecución manual desde Actions. En Settings > Pages la fuente debe ser **GitHub Actions**.
+
+`https://mothm4n.github.io/minerva/version.json` identifica el commit publicado. Puedes comprobar la web real con las mismas pruebas, en un navegador aislado y sin arrancar un servidor local:
+
+```sh
+MINERVA_TEST_URL=https://mothm4n.github.io/minerva/ npm run test:e2e
+```
+
+Las partidas se guardan en el navegador bajo el dominio público, separadas de las partidas de localhost. Las pruebas usan su propio almacenamiento y no alteran las partidas personales.
 
 ## Controles y CI local
 
@@ -133,7 +147,7 @@ npm run ci:local
 | `npm run test:e2e -- --headed` | Las mismas pruebas con el navegador visible. |
 | `npx playwright show-report` | Informe del último recorrido de navegador. |
 
-Antes de cada commit se ejecuta `check`. Antes de cada push se exige una copia de trabajo limpia, que las referencias enviadas correspondan al commit abierto, y se ejecuta `ci:local`. Los hooks son locales y cada clon debe activarlos con `setup`; Git permite omitirlos, por lo que no equivalen a una protección del servidor. No hay workflows de GitHub Actions. Esta ejecución directa no necesita Docker ni `act`.
+Antes de cada commit se ejecuta `check`. Antes de cada push se exige una copia de trabajo limpia, que las referencias enviadas correspondan al commit abierto, y se ejecuta `ci:local`. Los hooks son locales y cada clon debe activarlos con `setup`; Git permite omitirlos. El workflow de GitHub Pages repite estas comprobaciones antes de publicar. La ejecución local no necesita Docker ni `act`.
 
 Playwright arranca y detiene su propio servidor de producción en `127.0.0.1:4175`. Si el puerto está ocupado falla, sin reutilizar otra aplicación; puedes cambiarlo con `MINERVA_TEST_PORT=4180 npm run test:e2e`. Cada prueba tiene un navegador aislado de las partidas personales. Los recorridos cubren victoria, pausa, recuperación, reinicio confirmado, teclado, idiomas, emergencia, pérdida del contexto WebGL, alternativa sin WebGL, movimiento reducido y tamaños de móvil, tableta y escritorio.
 

@@ -85,7 +85,7 @@ test('el idioma conserva el progreso y la consola sigue en inglés', async ({ pa
 
 test('descarta un guardado inválido sin bloquear el inicio', async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('minerva.prototype.v1', '{invalid'));
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.locator('#save-status')).not.toBeEmpty();
   await page.locator('#start').click();
   await expect.poll(async () => (await savedGame(page)).stage).toBe('matter');

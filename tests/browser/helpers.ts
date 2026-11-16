@@ -19,7 +19,7 @@ export async function savedGame(page: Page): Promise<Game> {
 }
 
 export async function begin(page: Page) {
-  await page.goto('/');
+  await page.goto('./');
   await page.locator('#start').click();
   await expect(page.locator('#sound')).toHaveAttribute('aria-pressed', 'true');
   await page.locator('#sound').click();

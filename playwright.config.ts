@@ -2,7 +2,8 @@ import { defineConfig, devices } from '@playwright/test';
 
 const port = Number(process.env.MINERVA_TEST_PORT ?? 4175);
 if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('MINERVA_TEST_PORT must be a port between 1024 and 65535.');
-const baseURL = `http://127.0.0.1:${port}`;
+const deployedURL = process.env.MINERVA_TEST_URL;
+const baseURL = deployedURL ?? `http://127.0.0.1:${port}/minerva/`;
 
 export default defineConfig({
   testDir: './tests/browser',
@@ -21,7 +22,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
   projects: [{ name: 'chromium', use: { browserName: 'chromium' } }],
-  webServer: {
+  webServer: deployedURL ? undefined : {
     command: `npm run build && npm run preview -- --port ${port} --strictPort`,
     url: baseURL,
     reuseExistingServer: false,

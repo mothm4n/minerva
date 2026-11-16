@@ -1,5 +1,14 @@
 import { test, expect, begin, command, preparePortal, savedGame } from './helpers';
 
+test('carga la imagen y las fuentes desde la ruta publicada', async ({ page }) => {
+  await begin(page);
+  const image = page.locator('#portal-world');
+  await expect(image).toHaveAttribute('src', '/minerva/worlds/volcanic-citadel.png');
+  await expect.poll(() => image.evaluate(node => (node as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await page.evaluate(() => document.fonts.ready);
+  expect(await page.evaluate(() => document.fonts.check('700 18px "Barlow Condensed"'))).toBe(true);
+});
+
 test('emergencia conserva borrador, historial y pausa; el CRT se detiene', async ({ page }) => {
   await begin(page);
   await command(page, 'ichidai plug w_matter');

@@ -8,7 +8,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run --allowOnly false",
-    "lint": "oxlint --deny-warnings src tests playwright.config.ts",
+    "lint": "oxlint --deny-warnings src tests playwright.config.ts vite.config.ts",
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm test",
     "test:e2e": "playwright test",

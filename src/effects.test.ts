@@ -1,9 +1,10 @@
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { createEffects, effectState, toroidState } from './effects';
 import { commandFeedback } from './feedback';
 import { execute, newGame, tick, WORLDS } from './game';
 
 describe('estado visual de los instrumentos', () => {
+  afterEach(() => vi.unstubAllEnvs());
   it('abre en 8 segundos y congela la apertura al pausar', () => {
     const game = { ...newGame(), stage: 'open' as const, energy: 55, cooling: 100, matter: 100 };
     expect(effectState(game, false).portal[3]).toBe(0);
@@ -18,6 +19,7 @@ describe('estado visual de los instrumentos', () => {
     expect(effectState(game, false).portal[3]).toBeCloseTo(1);
   });
   it('asigna la imagen al destino y mantiene la apertura sin WebGL', () => {
+    vi.stubEnv('BASE_URL', '/minerva/');
     let source = '';
     const style = { setProperty: vi.fn() };
     const container = { style, dataset: { open: '' } };
@@ -27,9 +29,9 @@ describe('estado visual de los instrumentos', () => {
     const game = { ...newGame(), stage: 'open' as const, remaining: 37 };
     for (let signal = 0; signal < WORLDS.length; signal++) {
       game.signal = signal;
-      expect(effectState(game, false).image).toBe(WORLDS[signal].image);
+      expect(effectState(game, false).image).toBe(`/minerva${WORLDS[signal].image}`);
       effects.render(game, false);
-      expect(source).toBe(WORLDS[signal].image);
+      expect(source).toBe(`/minerva${WORLDS[signal].image}`);
     }
     expect(container.dataset.open).toBe('true');
     expect(style.setProperty).toHaveBeenLastCalledWith('--portal-reveal', '1');
