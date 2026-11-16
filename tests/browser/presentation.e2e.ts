@@ -66,6 +66,7 @@ test('se puede ganar sin WebGL y con movimiento reducido', async ({ page }) => {
   await expect(page.locator('#reference-wave')).toHaveCSS('opacity', '1');
   await expect(page.locator('#reference-wave')).toHaveAttribute('d', /^M0,/);
   await page.locator('#emergency').focus();
+  await expect(page.locator('#emergency')).toBeFocused();
   await page.keyboard.press('Space');
   await expect(page.locator('html')).toHaveAttribute('data-crt', 'still');
   await expect(page.locator('body')).toHaveCSS('filter', 'none');

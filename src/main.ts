@@ -105,6 +105,14 @@ const terminal = $('#terminal').terminal(run, {
 });
 terminal.find('textarea').attr('aria-label', 'Enter a Minerva command');
 terminal.find('[role="log"]').attr('aria-label', 'Minerva responses');
+// A deferred caret update can refocus a disabled terminal; disable its native input too.
+document.addEventListener('focusin', event => {
+  if (event.target instanceof Node && !terminal[0].contains(event.target)) {
+    terminal.disable();
+    terminal.find('textarea').prop('disabled', true);
+  }
+});
+terminal[0].addEventListener('pointerdown', () => terminal.find('textarea').prop('disabled', false));
 const output = terminal.find('.terminal-output')[0];
 const effects = createEffects(el<HTMLCanvasElement>('wave-effects'), el<HTMLCanvasElement>('portal-effects'), el<HTMLImageElement>('portal-world'), el<HTMLCanvasElement>('toroid-effects'));
 const feedback = createFeedback();
@@ -120,6 +128,7 @@ function acknowledge(command: string, before: Game, reply: Reply) {
 function focusConsole() {
   if (el('guide').matches(':popover-open')) el('guide').hidePopover();
   if (game.stage === 'standby') { el('start').focus(); return; }
+  terminal.find('textarea').prop('disabled', false);
   terminal.enable().focus();
   terminal.find('textarea').trigger('focus');
 }

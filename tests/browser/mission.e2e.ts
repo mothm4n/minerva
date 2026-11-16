@@ -59,8 +59,11 @@ test('permite completar órdenes, recuperar el historial y salir con el teclado'
   await page.keyboard.press('Escape');
   await expect(page.locator('#focus-terminal')).toBeFocused();
   await page.keyboard.press('Enter');
+  await expect(page.locator('#terminal textarea')).toBeFocused();
   await page.keyboard.press('Shift+Tab');
   await expect(page.locator('#focus-terminal')).toBeFocused();
+  await page.locator('#terminal').click();
+  await expect(page.locator('#terminal textarea')).toBeFocused();
 });
 
 test('el idioma conserva el progreso y la consola sigue en inglés', async ({ page }) => {
