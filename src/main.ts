@@ -43,6 +43,7 @@ function save() {
 function print(reply: Reply) {
   const color = reply.kind === 'error' ? '#ff5065' : '#89f5c9';
   reply.lines.forEach(line => {
+    // oxlint-disable-next-line no-control-regex -- Strip control characters before rendering terminal output.
     const safe = $.terminal.escape_formatting(line.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, ''));
     terminal.echo(`[[;${color};]${safe}]`, { raw: false, exec: false, formatters: false });
   });

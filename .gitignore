@@ -8,6 +8,7 @@ output/
 .impeccable/review/
 .impeccable/live/
 .impeccable/hook.cache.json
+.impeccable/config.local.json
 playwright-report/
 test-results/
 .env

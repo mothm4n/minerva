@@ -7,7 +7,14 @@
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "vitest run"
+    "test": "vitest run --allowOnly false",
+    "lint": "oxlint --deny-warnings src tests playwright.config.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm test",
+    "test:e2e": "playwright test",
+    "ci:local": "npm run check && npm run test:e2e",
+    "hooks:install": "git config --local core.hooksPath .githooks",
+    "setup": "playwright install chromium && npm run hooks:install"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.6",
@@ -17,7 +24,10 @@
     "jquery.terminal": "2.48.1"
   },
   "devDependencies": {
+    "@playwright/test": "1.65.1",
     "@types/howler": "^2.2.12",
+    "@types/node": "22.20.5",
+    "oxlint": "1.93.0",
     "typescript": "^5.9.3",
     "vite": "8.3.8",
     "vitest": "5.1.0"

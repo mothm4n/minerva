@@ -10,8 +10,8 @@
         "files": [
           "index.html"
         ],
-        "createdAt": "2026-11-15T09:59:29.396Z",
-        "reason": "Codex: falso positivo verificado en Chrome y en src/style.css. El título usa 32 px frente a 13 px de texto (2,46x), y los títulos de subsistema 17 px frente a 12 px (1,42x). En móvil el título usa 27 px frente a 12 px. El CSS se carga desde src/main.ts; se conserva la jerarquía existente."
+        "createdAt": "2026-11-16T05:14:08.767Z",
+        "reason": "Codex: falso positivo confirmado el 2026-11-16. El analizador estático asigna 16px a todos los roles porque el CSS se importa desde src/main.ts. tests/browser/presentation.e2e.ts verifica en Chromium una relación h1/cuerpo de al menos 1,25 a 320, 390, 768 y 1440px en la vista principal. Se conserva la composición aprobada."
       }
     ]
   }

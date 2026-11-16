@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+cd "$(git rev-parse --show-toplevel)"
+if ! git diff --quiet HEAD || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+  echo "Guarda los cambios en un commit antes de subirlos: las pruebas deben revisar la versión publicada." >&2
+  exit 1
+fi
+head=$(git rev-parse HEAD)
+while read -r local_ref local_oid remote_ref remote_oid; do
+  case "$local_oid" in 0000000000000000000000000000000000000000) continue ;; esac
+  if [ "$(git rev-parse "$local_oid^{commit}")" != "$head" ]; then
+    echo "El control local comprueba la rama abierta. Abre $local_ref antes de subir esa referencia." >&2
+    exit 1
+  fi
+done
+npm run ci:local

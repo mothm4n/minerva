@@ -6,11 +6,26 @@ La UI adopta la propuesta A - Puente de mando elegida por el usuario: instrument
 
 La investigación de referencias de Evangelion y posibles estilos está en [RESEARCH_UI_EVANGELION.md](RESEARCH_UI_EVANGELION.md). El sistema implementado está documentado en [DESIGN.md](DESIGN.md) y la capa gráfica en [EFECTOS.md](EFECTOS.md).
 
-La consola usa una letra más compacta y los instrumentos incorporan estelas, barrido de señal, anillos giratorios y un campo de energía durante la transferencia. [Ver la grabación de la aplicación](output/playwright/minerva-final.mp4).
+La consola usa una letra más compacta y los instrumentos incorporan estelas, barrido de señal, anillos giratorios y un campo de energía durante la transferencia.
 
 Cada orden confirma su resultado en una línea persistente y anima el subsistema correspondiente. Carga, escaneo, ajuste, fijación, enlace y transferencia tienen respuestas propias; las lecturas modificadas se resaltan y los rechazos usan rojo. Funciona también con movimiento reducido y sin WebGL. La adaptación de RealityGlitchArt y sus créditos están en [EFECTOS.md](EFECTOS.md).
 
-Las respuestas visuales duran 1,2 segundos y el toroide tiene un arranque de 3,6 segundos con fluctuaciones eléctricas, adaptado del código de **Noise animation - Electric**, de nimitz, aportado por el usuario. [Ver la demostración actualizada](output/playwright/minerva-toroid.mp4).
+Las respuestas visuales duran 1,2 segundos y el toroide tiene un arranque de 3,6 segundos con fluctuaciones eléctricas, adaptado del código de **Noise animation - Electric**, de nimitz, aportado por el usuario.
+
+## Versiones del proyecto
+
+- [`main`](https://github.com/mothm4n/minerva/tree/main): versión web en desarrollo.
+- [`legacy/openframeworks`](https://github.com/mothm4n/minerva/tree/legacy/openframeworks): código original, sin modificaciones.
+- [`v1.0.0-openframeworks`](https://github.com/mothm4n/minerva/tree/v1.0.0-openframeworks): etiqueta del original, «Minerva v1.0 - versión original en openFrameworks», en el commit `2788f1a5d7f4ae83bc206cda9b5095247f1b04f8`.
+
+La web continúa el historial original. `master` se conserva como referencia histórica; el trabajo nuevo se hace desde `main`. Para consultar el original sin sustituir los archivos web:
+
+```sh
+git show v1.0.0-openframeworks:src/testApp.cpp
+git worktree add --detach ../Minerva-openframeworks v1.0.0-openframeworks
+```
+
+La etiqueta permite abrir siempre la misma versión, también desde un clon nuevo.
 
 ## Jugar en local
 
@@ -47,7 +62,7 @@ La preparación no tiene límite de tiempo. Al abrir el portal quedan 45 segundo
 
 El progreso se guarda en este navegador bajo la clave `minerva.prototype.v1` de localStorage. No se guarda el historial de la consola. Borrar los datos del sitio elimina la partida; no hay sincronización entre dispositivos.
 
-La distorsión de emergencia se congela al pausar y deja de dibujarse con la pestaña oculta. Con movimiento reducido solo quedan líneas estáticas, sin desplazamiento, separación de color ni ruido. Al volver a la interfaz principal se retira el efecto. Es una adaptación visual del shader aportado por el usuario; su funcionamiento y atribución están en [EFECTOS.md](EFECTOS.md). [Ver la demostración CRT](output/playwright/minerva-crt.mp4).
+La distorsión de emergencia se congela al pausar y deja de dibujarse con la pestaña oculta. Con movimiento reducido solo quedan líneas estáticas, sin desplazamiento, separación de color ni ruido. Al volver a la interfaz principal se retira el efecto. Es una adaptación visual del shader aportado por el usuario; su funcionamiento y atribución están en [EFECTOS.md](EFECTOS.md).
 
 <details>
 <summary>Solución de la primera misión</summary>
@@ -95,6 +110,32 @@ npm run preview
 ```
 
 La compilación genera `dist/`, una aplicación estática que se puede servir desde la raíz de un alojamiento web. No necesita servidor de juego, cuentas ni servicios externos.
+
+## Controles y CI local
+
+Al preparar un clon para desarrollar, usa la versión de Node de `.nvmrc` (`nvm use`, si utilizas nvm) y ejecuta:
+
+```sh
+npm ci
+npm run setup
+npm run ci:local
+```
+
+`setup` instala Chromium y activa los hooks de este repositorio. Se repite después de actualizar Playwright; en Linux puede ser necesario instalar también las dependencias del navegador con `npx playwright install --with-deps chromium`.
+
+| Comando | Comprobación |
+| --- | --- |
+| `npm run check` | Oxlint, TypeScript y pruebas Vitest, incluidos los hashes de los 16 audios originales. |
+| `npm run test:e2e` | Compilación nueva y pruebas de navegador con Playwright. |
+| `npm run ci:local` | Todos los controles anteriores, en este equipo. |
+| `npm run test:e2e -- --headed` | Las mismas pruebas con el navegador visible. |
+| `npx playwright show-report` | Informe del último recorrido de navegador. |
+
+Antes de cada commit se ejecuta `check`. Antes de cada push se exige una copia de trabajo limpia, que las referencias enviadas correspondan al commit abierto, y se ejecuta `ci:local`. Los hooks son locales y cada clon debe activarlos con `setup`; Git permite omitirlos, por lo que no equivalen a una protección del servidor. No hay workflows de GitHub Actions. Esta ejecución directa no necesita Docker ni `act`.
+
+Playwright arranca y detiene su propio servidor de producción en `127.0.0.1:4175`. Si el puerto está ocupado falla, sin reutilizar otra aplicación; puedes cambiarlo con `MINERVA_TEST_PORT=4180 npm run test:e2e`. Cada prueba tiene un navegador aislado de las partidas personales. Los recorridos cubren victoria, pausa, recuperación, reinicio confirmado, teclado, idiomas, emergencia, pérdida del contexto WebGL, alternativa sin WebGL, movimiento reducido y tamaños de móvil, tableta y escritorio.
+
+Los tests permanentes están en `tests/browser/`. Los fallos dejan capturas y trazas en `test-results/`, y el informe HTML en `playwright-report/`. Estas carpetas, las grabaciones de `output/` y las revisiones antiguas de `.impeccable/review/` permanecen locales. Las comprobaciones automáticas usan Chromium; los registros históricos de otros navegadores no forman parte de este CI.
 
 Vite muestra una advertencia por un `eval` interno de jQuery Terminal. La invocación de métodos desde la salida está desactivada (`invokeMethods: false`), las respuestas se escapan y no se ejecutan órdenes desde el fragmento de la URL.
 

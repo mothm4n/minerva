@@ -1,5 +1,7 @@
 # Efectos de Minerva
 
+Las comprobaciones repetibles actuales están en `tests/browser/`, con instrucciones en [README.md](README.md#controles-y-ci-local). Los enlaces a `output/` y `.impeccable/review/` de los registros históricos apuntan a evidencias locales que no se distribuyen en Git.
+
 La capa gráfica principal usa WebGL 1 nativo sin añadir una librería. La interfaz, las etiquetas, el reloj y los controles siguen siendo HTML accesible. Los tres lienzos dibujan la señal, el portal y el arranque del toroide dentro de Ichidai. El protocolo de emergencia usa una adaptación independiente de televisión antigua con SVG y Canvas 2D, sin necesitar WebGL.
 
 ## Flujo
