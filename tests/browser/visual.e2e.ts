@@ -1,4 +1,5 @@
 import { test, expect, begin, command, preparePortal, savedGame } from './helpers';
+import { translations } from '../../src/i18n';
 
 const capture = process.env.MINERVA_CAPTURE === '1';
 const viewports = [
@@ -105,6 +106,146 @@ for (const language of ['es', 'en', 'ja']) {
         }
         if (capture) await testInfo.attach(`transfer-${language}-${viewport.width}`, {
           body: await page.screenshot({ path: testInfo.outputPath(`transfer-${language}-${viewport.width}.png`), fullPage: true }), contentType: 'image/png',
+        });
+      });
+    }
+  });
+}
+
+test('el toroide dibuja al arrancar, se congela al pausar y no vuelve a arrancar al repetir la orden', async ({ page }) => {
+  await page.clock.install({ time: new Date('2026-01-01T00:00:00Z') });
+  await page.addInitScript(() => {
+    const draw = WebGLRenderingContext.prototype.drawArrays;
+    WebGLRenderingContext.prototype.drawArrays = function (...args) {
+      draw.apply(this, args);
+      const canvas = this.canvas as HTMLCanvasElement;
+      if (canvas.id === 'toroid-effects') canvas.dataset.testDraws = String(Number(canvas.dataset.testDraws ?? 0) + 1);
+    };
+  });
+  await begin(page);
+  await page.clock.pauseAt(new Date('2026-01-01T00:01:00Z'));
+  const field = page.locator('#reactor-startup');
+  const canvas = page.locator('#toroid-effects');
+  const state = page.locator('#magnet-state');
+  const progress = () => field.evaluate(node => Number(node.style.getPropertyValue('--ignition')));
+  const draws = async () => Number(await canvas.getAttribute('data-test-draws'));
+
+  await command(page, 'ichidai plug toroid');
+  await expect(page.locator('#command-feedback')).toHaveAttribute('data-kind', 'error');
+  await page.clock.runFor(64);
+  await expect(field).toHaveAttribute('data-active', 'false');
+  expect(await draws()).toBe(0);
+
+  await command(page, 'ichidai plug w_matter');
+  await command(page, 'ichidai plug cooling');
+  await command(page, 'ichidai plug toroid');
+  await expect(page.locator('#command-result')).toHaveText('Toroid powered up.');
+  await page.clock.runFor(64);
+  await expect(field).toBeVisible();
+  await expect(state).toHaveText('Cargando');
+  await expect(canvas).toHaveAttribute('data-ready', 'true');
+  expect(await draws()).toBeGreaterThan(0);
+
+  await page.clock.runFor(1736);
+  await expect(state).toHaveText('Confinando');
+  expect(await progress()).toBeCloseTo(0.5, 2);
+  await page.locator('#pause').click();
+  await page.clock.runFor(64);
+  const paused = await progress();
+  const pausedDraws = await draws();
+  await page.clock.runFor(1000);
+  expect(await progress()).toBe(paused);
+  expect(await draws()).toBe(pausedDraws);
+
+  await page.locator('#pause').click();
+  await command(page, 'ichidai plug toroid');
+  await expect(page.locator('#command-result')).toHaveText('That system is already active. No resources were consumed.');
+  await page.clock.runFor(128);
+  expect(await progress()).toBeGreaterThan(paused);
+  expect(await draws()).toBeGreaterThan(pausedDraws);
+  await page.clock.runFor(1700);
+  await expect(state).toHaveText('Estable');
+  await expect(field).toHaveAttribute('data-active', 'false');
+
+  const settledDraws = await draws();
+  await command(page, 'ichidai plug toroid');
+  await page.clock.runFor(200);
+  await expect(field).toHaveAttribute('data-active', 'false');
+  expect(await draws()).toBe(settledDraws);
+});
+
+const protectedReadouts = {
+  ichidai: '.system-heading h2, .resource label, .resource-value, .toroid-state, .reactor-caption',
+  sandai: '.system-heading h2, .signal-toolbar, .sync-readout, #wave-empty, .y-axis, .x-axis, .wave-legend',
+  nidai: '.system-heading h2, .reader-status, .destination-status, .portal-status, .mission-time, #transfer-status',
+};
+
+for (const language of ['es', 'en', 'ja'] as const) {
+  test(`los rótulos activos dejan libres las lecturas en móvil - ${language}`, async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 900 });
+    await page.addInitScript(value => localStorage.setItem('minerva.language', value), language);
+    await begin(page);
+    await expect(page.locator('html')).toHaveAttribute('lang', language);
+    await page.evaluate(() => document.fonts.ready);
+
+    for (const [order, label, ...systems] of [
+      ['ichidai plug toroid', 'COMMAND REJECTED', 'ichidai'],
+      ['ichidai plug w_matter', 'POWER SUPPLY', 'ichidai'],
+      ['ichidai plug cooling', 'POWER SUPPLY', 'ichidai'],
+      ['ichidai plug toroid', 'Magnetic field', 'ichidai'],
+      ['nidai set reader', 'READER ONLINE', 'nidai', 'sandai', 'ichidai'],
+      ['sandai show connections', 'SIGNAL SCAN', 'sandai'],
+      ['sandai select 2', 'WAVE TUNING', 'sandai'],
+      ['sandai tune 3.4 0.62', 'WAVE TUNING', 'sandai'],
+      ['sandai lock', 'SIGNAL LOCKED', 'sandai', 'nidai'],
+      ['nidai connect 532924', 'LINK CONFIRMED', 'nidai'],
+      ['nidai start portal', 'PORTAL OPEN', 'nidai'],
+      ['nidai transfer', 'TRANSFER', 'nidai'],
+    ] as const) {
+      await test.step(order, async () => {
+        await command(page, order);
+        const isField = label === 'Magnetic field';
+        const selector = isField ? '.reactor-caption' : '.command-stamp';
+        const panels = systems.map(system => page.locator(`#${system}`));
+        for (const panel of panels) {
+          const caption = panel.locator(selector);
+          await expect(caption).toHaveText(language === 'en' ? label : translations[label][language]);
+          if (!isField) await caption.evaluate(node => {
+            // Hold the label at its readable midpoint for both widths.
+            const [animation] = node.getAnimations();
+            animation.pause();
+            animation.currentTime = Number(animation.effect!.getTiming().duration) / 2;
+          });
+        }
+        if (order === 'nidai transfer') await expect(page.locator('#transfer-status')).toBeVisible();
+        for (const width of [320, 390]) {
+          await page.setViewportSize({ width, height: 900 });
+          for (const [index, system] of systems.entries()) {
+            const caption = panels[index].locator(selector);
+            await expect(caption).toBeVisible();
+            const geometry = await caption.evaluate((node, readouts) => {
+              const panel = node.closest('.system')!;
+              const label = (node.closest('.reactor-startup') ?? node).getBoundingClientRect();
+              const bounds = panel.getBoundingClientRect();
+              const overlaps = (rect: DOMRect) => label.left < rect.right - 0.5 && label.right > rect.left + 0.5 &&
+                label.top < rect.bottom - 0.5 && label.bottom > rect.top + 0.5;
+              const collisions = [...panel.querySelectorAll(readouts)].filter(readout => {
+                if (node === readout || getComputedStyle(readout).visibility !== 'visible') return false;
+                const text = document.createRange();
+                text.selectNodeContents(readout);
+                return [...text.getClientRects()].some(rect => rect.width > 0 && rect.height > 0 && overlaps(rect));
+              }).map(readout => readout.textContent?.trim());
+              return {
+                inside: label.left >= bounds.left && label.right <= bounds.right && label.top >= bounds.top && label.bottom <= bounds.bottom,
+                visible: Number(getComputedStyle(node).opacity) > 0.5,
+                collisions,
+              };
+            }, protectedReadouts[system]);
+            expect.soft(geometry, `${label} in ${system} at ${width}px`).toEqual({ inside: true, visible: true, collisions: [] });
+          }
+        }
+        if (!isField) for (const panel of panels) await panel.locator(selector).evaluate(node => {
+          node.getAnimations().forEach(animation => animation.finish());
         });
       });
     }

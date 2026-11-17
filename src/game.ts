@@ -64,7 +64,7 @@ export function next(game: Game): [string, string] {
 const SETUP = [
   ['ichidai plug w_matter', 'matter', 'cooling', 12, 'W matter loaded. Reserve at 100%.'],
   ['ichidai plug cooling', 'cooling', 'toroid', 10, 'Cooling circuit active.'],
-  ['ichidai plug toroid', 'toroid', 'reader', 18, 'Toroid powered up. Magnetic field stable.'],
+  ['ichidai plug toroid', 'toroid', 'reader', 18, 'Toroid powered up.'],
   ['nidai set reader', 'reader', 'scan', 5, 'Beta spectrum reader online. Sandai can scan for signals.'],
 ] as const;
 

@@ -207,6 +207,7 @@ Desde el 16 de noviembre de 2026, por petición del usuario, el criterio de cier
 - Mantener tres instrumentos arriba y consola a todo el ancho debajo en escritorio, con Sandai dominante. En móvil se admite el desplazamiento y la redistribución descritos en Layout.
 - Mantener el historial compacto (13-18px) y el prompt independiente y mayor (17-28px). El tamaño original del boceto fue sustituido expresamente por el usuario.
 - Comprobar sincronía al 100 %, transferencia de dos cifras y lecturas completas dentro de Nidai en los tres idiomas. Número y símbolo permanecen juntos. Las pruebas de presentación cubren además pausa, movimiento reducido y alternativa sin WebGL.
+- Comprobar que los rótulos activos dejan libres las lecturas a 320 y 390 px en castellano, inglés y japonés. Durante el arranque del toroide se verifica que el campo se dibuja, se congela al pausar y no vuelve a arrancar al repetir la orden.
 - Comprobar la apertura del portal a 0, 4 y 8 segundos: la imagen mantiene tamaño y posición, la máscara revela el centro antes que el exterior y la pausa congela tanto el progreso como el dibujo. Revisar el acabado del borde en las capturas y la grabación a velocidad real.
 - Comparar los estados reales: texto, frecuencia, progreso, imagen del destino y movimiento siguen la partida. Sus diferencias respecto a una imagen fija son esperadas; las curvas y geometría SVG son instrumentos de datos.
 

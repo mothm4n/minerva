@@ -180,7 +180,7 @@ body[data-portal-open='true'] .portal-readouts::before { background: var(--mint)
 .command-trace[data-motion='lock'] { border: 1px solid currentColor; background: none; }
 .command-trace[data-motion='error'] { background: repeating-linear-gradient(135deg, currentColor 0 6px, transparent 6px 14px) bottom / 100% 6px no-repeat; }
 .console-section > .command-trace { background: none; border-bottom: 0; }
-.command-stamp { position: absolute; top: 56%; left: 50%; transform: translate(-50%, -50%); max-width: calc(100% - 16px); padding: 6px 12px; background: var(--black); color: inherit; border-block: 2px solid currentColor; font-size: clamp(17px, 1.55vw, 26px); line-height: 1.05; letter-spacing: .025em; white-space: nowrap; text-align: center; }
+.command-stamp { position: absolute; z-index: 5; top: 56%; left: 50%; transform: translate(-50%, -50%); width: max-content; max-width: calc(100% - 16px); opacity: 0; pointer-events: none; padding: 6px 12px; background: var(--black); color: inherit; border-block: 2px solid currentColor; font-size: clamp(17px, 1.55vw, 26px); line-height: 1.05; letter-spacing: .025em; white-space: nowrap; text-align: center; }
 .command-stamp:empty { display: none; }
 .reactor-startup { position: absolute; z-index: 4; inset: 34% 16px 63px; background: #080707f5; border-block: 1px solid var(--amber); color: var(--amber); opacity: 0; visibility: hidden; pointer-events: none; }
 .reactor-startup[data-active='true'] { opacity: 1; visibility: visible; }
@@ -189,7 +189,15 @@ body[data-portal-open='true'] .portal-readouts::before { background: var(--mint)
 .reactor-startup::before { left: 0; }.reactor-startup::after { right: 0; }
 .reactor-fallback { transform: scale(calc(.86 + var(--ignition, 0) * .14)); }
 @media (max-width: 900px) { .reactor-startup { inset: 35% 13px 30px; }.reactor-caption { font-size: 11px; bottom: 2px; }.command-stamp { font-size: 16px; padding: 4px 7px; } }
-@media (max-width: 560px) { .reactor-startup { top: 43%; }.reactor-caption { font-size: 9px; }.command-stamp { font-size: 13px; } }
+@media (max-width: 560px) {
+ .reactor-startup { top: 57%; }
+ .reactor-caption { font-size: 9px; }
+ .command-stamp { font-size: 13px; }
+ #ichidai .command-stamp { top: 69%; }
+ #sandai .command-stamp { top: 79%; }
+ #wave-empty { align-items: start; padding: 6px 8px; }
+ #nidai .command-stamp { top: 73%; left: 21%; max-width: calc(40% - 8px); padding-inline: 2px; font-size: 11px; }
+}
 #sync-value[data-empty='true'] { font-size: clamp(17px, 1.5vw, 24px); padding-block: 5px; }
 body[data-standby='true'] .command-feedback { display: none; }
 @media (max-width: 560px) { .command-feedback { gap: 8px; font-size: 13px; min-height: 37px; }.command-feedback i { display: none; } }

@@ -56,16 +56,16 @@ export function createFeedback() {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const animations = new Map<Element, Animation>();
   const receipt = document.getElementById('command-feedback')!;
-  const traces = new Map<Element, HTMLElement>();
+  const traces = new Map<Element, { trace: HTMLElement; stamp: HTMLElement }>();
   for (const panel of document.querySelectorAll('.panel')) {
     const trace = document.createElement('span');
     trace.className = 'command-trace';
     trace.setAttribute('aria-hidden', 'true');
     const stamp = document.createElement('b');
     stamp.className = 'command-stamp';
-    trace.append(stamp);
-    panel.append(trace);
-    traces.set(panel, trace);
+    stamp.setAttribute('aria-hidden', 'true');
+    panel.append(trace, stamp);
+    traces.set(panel, { trace, stamp });
   }
 
   function animate(node: Element, frames: Keyframe[], duration = COMMAND_DURATION) {
@@ -104,20 +104,23 @@ export function createFeedback() {
         }
       }
       animate(receipt, [{ opacity: 0.55 }, { opacity: 1 }], 180);
+      const hold = [{ opacity: 0.85 }, { opacity: 0.8, offset: 0.35 }, { opacity: 0.6, offset: 0.72 }, { opacity: 0 }];
+      const fade = [{ opacity: 0.4 }, { opacity: 0 }];
       for (const panel of panels) {
-        const trace = traces.get(panel)!;
-        trace.style.color = color;
+        const { trace, stamp } = traces.get(panel)!;
+        trace.style.color = stamp.style.color = color;
         trace.dataset.motion = motion;
         const captions: Record<string, string> = { read: 'READOUT', charge: 'POWER SUPPLY', scan: 'SIGNAL SCAN', tune: 'WAVE TUNING', lock: 'SIGNAL LOCKED', link: 'LINK CONFIRMED', open: 'PORTAL OPEN', transfer: 'TRANSFER', error: 'COMMAND REJECTED', toroid: 'TOROID / STARTUP' };
-        trace.firstElementChild!.textContent = panel.id === 'console' || motion === 'toroid' || motion === 'read' ? '' : t(motion === 'link' && targets.includes('.reader-status') ? 'READER ONLINE' : captions[motion]);
+        stamp.textContent = panel.id === 'console' || motion === 'toroid' || motion === 'read' ? '' : t(motion === 'link' && targets.includes('.reader-status') ? 'READER ONLINE' : captions[motion]);
         const transform = motion === 'charge' ? 'translateY(75%)' : motion === 'lock' ? 'scaleX(0.65)' : 'translateX(-85%)';
+        if (stamp.textContent) animate(stamp, reduced.matches ? fade : hold, duration);
         animate(trace, reduced.matches
-          ? [{ opacity: 0.4 }, { opacity: 0 }]
-          : [{ opacity: 0.85, transform }, { opacity: 0.8, transform: 'none', offset: 0.35 }, { opacity: 0.6, transform: 'none', offset: 0.72 }, { opacity: 0, transform: 'none' }], duration);
+          ? fade
+          : hold.map((frame, index) => ({ ...frame, transform: index === 0 ? transform : 'none' })), duration);
       }
     },
     dispose() {
-      stop(); traces.forEach(trace => trace.remove());
+      stop(); traces.forEach(({ trace, stamp }) => { trace.remove(); stamp.remove(); });
       reduced.removeEventListener('change', stop);
       document.removeEventListener('visibilitychange', hidden);
     },
